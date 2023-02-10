@@ -10,7 +10,7 @@
 | 2/9  | setup questie database, created quest and user tables. Created quest and user javabeans and packages | 2    | still need to make a test database                                       |
 | 2/10 | copied over everything in the resources directory from week-2 display exercise                       | 1    ||
 | 2/10 | working on setting up hibernate and dao classes with unit testing                                    | 2    ||
-|||||
+| 2/10 | Got through testing User class and deploying app, but can't get search results                       | 3    | sql grammar exception could not extract result set                       |
 |||||
 |||||
 |||||
