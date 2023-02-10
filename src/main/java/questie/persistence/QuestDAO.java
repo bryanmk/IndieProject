@@ -20,8 +20,8 @@ public class QuestDAO {
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
-     * Gets all users
-     * @return all the users
+     * Gets all quests
+     * @return all the quests
      */
     public List<Quest> getAll() {
 
