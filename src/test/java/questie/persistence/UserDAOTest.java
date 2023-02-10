@@ -1,5 +1,7 @@
 package questie.persistence;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import questie.entity.User;
 import questie.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class UserDAOTest {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
     UserDAO dao;
 
     /**
@@ -66,9 +69,6 @@ class UserDAOTest {
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
         assertEquals("Fred", insertedUser.getFirstName());
-        // Could continue comparing all values, but
-        // it may make sense to use .equals()
-        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
     }
 
     /**
@@ -84,11 +84,11 @@ class UserDAOTest {
      * Verifies update success.
      */
 //    @Test
-//    @Ignore
 //    void updateSuccess() {
 //        String newLastName = "Davis";
 //        User userToUpdate = dao.getById(3);
 //        userToUpdate.setLastName(newLastName);
+//        logger.info("new last name: " + newLastName);
 //        dao.saveOrUpdate(userToUpdate);
 //        User retrievedUser = dao.getById(3);
 //        assertEquals(newLastName, retrievedUser.getLastName());

@@ -15,15 +15,13 @@
     <table id="userTable" class="display" cellspacing="0" width="100%">
         <thead>
         <th>Name</th>
-        <th>User</th>
-        <th>Age</th>
+        <th>Gamertag</th>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">
             <tr>
                 <td>${user.firstName} ${user.lastName}</td>
-                <td>${user.userName}</td>
-                <td>${user.age}</td>
+                <td>${user.gamertag}</td>
             </tr>
         </c:forEach>
         </tbody>

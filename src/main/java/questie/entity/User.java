@@ -1,19 +1,59 @@
 package questie.entity;
 
+import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * User javabean.
  */
+@Entity(name = "User")
+@Table(name = "User")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+    @Column(name= "first_name")
     private String firstName;
+    @Column(name= "last_name")
     private String lastName;
+    @Column(name= "gamertag")
     private String gamertag;
 
     /**
      * Instantiates a new User.
      */
     public User() {
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param gamertag  the gamertag
+     */
+    public User(String firstName, String lastName, String gamertag) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gamertag = gamertag;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param gamertag  the gamertag
+     * @param id        the id
+     */
+    public User(String firstName, String lastName, String gamertag, int id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gamertag = gamertag;
+        this.id = id;
     }
 
     /**
@@ -86,5 +126,19 @@ public class User {
      */
     public void setGamertag(String gamertag) {
         this.gamertag = gamertag;
+    }
+
+    /**
+     * Creates a string representation of a User.
+     * @return string representation of a User.
+     */
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gamertag='" + gamertag + '\'' +
+                '}';
     }
 }
