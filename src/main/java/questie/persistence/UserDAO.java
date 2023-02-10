@@ -1,6 +1,6 @@
 package questie.persistence;
 
-import edu.matc.entity.User;
+import questie.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
