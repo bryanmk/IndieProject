@@ -1,7 +1,7 @@
 package questie.persistence;
 
-import edu.matc.entity.User;
-import edu.matc.test.util.Database;
+import questie.entity.User;
+import questie.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -61,7 +61,7 @@ class UserDAOTest {
     @Test
     void insertSuccess() {
 
-        User newUser = new User("Fred", "Flintstone", "fflintstone", LocalDate.parse("1968-01-01"));
+        User newUser = new User(1, "Fred", "Flintstone", "fflintstone");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
