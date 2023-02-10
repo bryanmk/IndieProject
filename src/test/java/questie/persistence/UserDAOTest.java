@@ -61,7 +61,7 @@ class UserDAOTest {
     @Test
     void insertSuccess() {
 
-        User newUser = new User(1, "Fred", "Flintstone", "fflintstone");
+        User newUser = new User("Fred", "Flintstone", "fflintstone");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
