@@ -11,7 +11,7 @@
 <html><body>
 
 <div class="container-fluid">
-  <h2>Search Results: </h2>
+  <h2>Quest Search Results: </h2>
   <table id="questTable" class="display" cellspacing="0" width="100%">
     <thead>
     <th>Name</th>

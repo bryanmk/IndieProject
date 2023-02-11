@@ -50,6 +50,25 @@ public class Quest {
     }
 
     /**
+     * Instantiates a new Quest.
+     *
+     * @param questId               the quest id
+     * @param questName             the quest name
+     * @param questLevelRequirement the quest level requirement
+     * @param questArea             the quest area
+     * @param questXP               the quest xp
+     * @param questReward           the quest reward
+     */
+    public Quest(int questId, String questName, int questLevelRequirement, String questArea, int questXP, String questReward) {
+        this.questId = questId;
+        this.questName = questName;
+        this.questLevelRequirement = questLevelRequirement;
+        this.questArea = questArea;
+        this.questXP = questXP;
+        this.questReward = questReward;
+    }
+
+    /**
      * Gets quest id.
      *
      * @return the quest id
