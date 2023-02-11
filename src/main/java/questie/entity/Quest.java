@@ -141,7 +141,7 @@ public class Quest {
     }
 
     /**
-     * String representation of a quest object.
+     * Creates a string representation of a quest object.
      * @return string representation of a quest object.
      */
     @Override
