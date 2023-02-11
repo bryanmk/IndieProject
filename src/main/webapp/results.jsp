@@ -14,8 +14,8 @@
     <h2>Search Results: </h2>
     <table id="userTable" class="display" cellspacing="0" width="100%">
         <thead>
-        <th>Name</th>
-        <th>Gamertag</th>
+            <th>Name</th>
+            <th>Gamertag</th>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">
