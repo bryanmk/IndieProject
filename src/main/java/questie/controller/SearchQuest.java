@@ -19,16 +19,16 @@ import java.io.IOException;
         urlPatterns = {"/searchUser"}
 )
 
-public class SearchUser extends HttpServlet {
+public class SearchQuest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         QuestDAO questDao = new QuestDAO();
 
         if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("users", questDao.getByQuestName(req.getParameter("searchTerm")));
+            req.setAttribute("quests", questDao.getByQuestName(req.getParameter("searchTerm")));
         } else {
-            req.setAttribute("users", questDao.getAll());
+            req.setAttribute("quests", questDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/questSearchResults.jsp");
