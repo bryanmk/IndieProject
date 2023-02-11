@@ -1,15 +1,29 @@
 package questie.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
 /**
  * Quest Javabean.
  */
+@Entity(name = "Quest")
+@Table(name = "Quest")
 public class Quest {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int questId;
+    @Column(name= "quest_name")
     private String questName;
+    @Column(name= "quest_level_requirement")
     private int questLevelRequirement;
+    @Column(name= "quest_area")
     private String questArea;
+    @Column(name= "quest_xp")
     private int questXP;
+    @Column(name= "quest_reward")
     private String questReward;
 
     /**
@@ -124,5 +138,21 @@ public class Quest {
      */
     public void setQuestReward(String questReward) {
         this.questReward = questReward;
+    }
+
+    /**
+     * String representation of a quest object.
+     * @return string representation of a quest object.
+     */
+    @Override
+    public String toString() {
+        return "Quest{" +
+                "questId=" + questId +
+                ", questName='" + questName + '\'' +
+                ", questLevelRequirement=" + questLevelRequirement +
+                ", questArea='" + questArea + '\'' +
+                ", questXP=" + questXP +
+                ", questReward='" + questReward + '\'' +
+                '}';
     }
 }
