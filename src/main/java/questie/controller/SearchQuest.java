@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 
 @WebServlet(
-        urlPatterns = {"/searchUser"}
+        urlPatterns = {"/searchQuest"}
 )
 
 public class SearchQuest extends HttpServlet {
@@ -26,7 +26,7 @@ public class SearchQuest extends HttpServlet {
         QuestDAO questDao = new QuestDAO();
 
         if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("quests", questDao.getByQuestName(req.getParameter("searchTerm")));
+            req.setAttribute("quests", questDao.getByQuestName(req.getParameter("questSearchTerm")));
         } else {
             req.setAttribute("quests", questDao.getAll());
         }

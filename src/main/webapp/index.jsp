@@ -5,11 +5,20 @@
 <h2>Questie User Search</h2>
 <form action="searchUser" class="form-inline">
     <div class="form-group">
-        <label for="searchTerm">Search</label>
-        <input type="text" class="form-control" id="searchTerm" name="searchTerm" aria-describedby="searchTermHelp" placeholder="">
+        <label for="userSearchTerm">User Search</label>
+        <input type="text" class="form-control" id="userSearchTerm" name="userSearchTerm" aria-describedby="searchTermHelp" placeholder="">
     </div>
     <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
     <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View all users</button>
+</form>
+
+<form action="searchQuest" class="form-inline">
+    <div class="form-group">
+        <label for="questSearchTerm">Quest Search</label>
+        <input type="text" class="form-control" id="questSearchTerm" name="questSearchTerm" aria-describedby="searchTermHelp" placeholder="">
+    </div>
+    <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
+    <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View all quests</button>
 </form>
 </body>
 </html>
