@@ -14,17 +14,17 @@ public class Quest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native", strategy = "native")
-    private int quest_id;
+    private int id;
     @Column(name= "quest_name")
-    private String quest_name;
+    private String questName;
     @Column(name= "quest_level_requirement")
-    private int quest_level_requirement;
+    private int questLevelRequirement;
     @Column(name= "quest_xp")
-    private int quest_xp;
+    private int questXP;
     @Column(name= "quest_area")
-    private String quest_area;
+    private String questArea;
     @Column(name= "quest_reward")
-    private String quest_reward;
+    private String questReward;
 
     /**
      * Instantiates a new Quest.
@@ -42,11 +42,11 @@ public class Quest {
      * @param questReward           the quest reward
      */
     public Quest(String questName, int questLevelRequirement, int questXP, String questArea, String questReward) {
-        this.quest_name = questName;
-        this.quest_level_requirement = questLevelRequirement;
-        this.quest_xp = questXP;
-        this.quest_area = questArea;
-        this.quest_reward = questReward;
+        this.questName = questName;
+        this.questLevelRequirement = questLevelRequirement;
+        this.questXP = questXP;
+        this.questArea = questArea;
+        this.questReward = questReward;
     }
 
     /**
@@ -60,12 +60,12 @@ public class Quest {
      * @param questReward           the quest reward
      */
     public Quest(int questId, String questName, int questLevelRequirement, int questXP, String questArea, String questReward) {
-        this.quest_id = questId;
-        this.quest_name = questName;
-        this.quest_level_requirement = questLevelRequirement;
-        this.quest_xp = questXP;
-        this.quest_area = questArea;
-        this.quest_reward = questReward;
+        this.id = questId;
+        this.questName = questName;
+        this.questLevelRequirement = questLevelRequirement;
+        this.questXP = questXP;
+        this.questArea = questArea;
+        this.questReward = questReward;
     }
 
     /**
@@ -74,7 +74,7 @@ public class Quest {
      * @return the quest id
      */
     public int getQuestId() {
-        return quest_id;
+        return id;
     }
 
     /**
@@ -83,7 +83,7 @@ public class Quest {
      * @param questId the quest id
      */
     public void setQuestId(int questId) {
-        this.quest_id = questId;
+        this.id = questId;
     }
 
     /**
@@ -92,7 +92,7 @@ public class Quest {
      * @return the quest name
      */
     public String getQuestName() {
-        return quest_name;
+        return questName;
     }
 
     /**
@@ -101,7 +101,7 @@ public class Quest {
      * @param questName the quest name
      */
     public void setQuestName(String questName) {
-        this.quest_name = questName;
+        this.questName = questName;
     }
 
     /**
@@ -110,7 +110,7 @@ public class Quest {
      * @return the quest level requirement
      */
     public int getQuestLevelRequirement() {
-        return quest_level_requirement;
+        return questLevelRequirement;
     }
 
     /**
@@ -119,7 +119,7 @@ public class Quest {
      * @param questLevelRequirement the quest level requirement
      */
     public void setQuestLevelRequirement(int questLevelRequirement) {
-        this.quest_level_requirement = questLevelRequirement;
+        this.questLevelRequirement = questLevelRequirement;
     }
 
     /**
@@ -128,7 +128,7 @@ public class Quest {
      * @return the quest area
      */
     public String getQuestArea() {
-        return quest_area;
+        return questArea;
     }
 
     /**
@@ -137,7 +137,7 @@ public class Quest {
      * @param questArea the quest area
      */
     public void setQuestArea(String questArea) {
-        this.quest_area = questArea;
+        this.questArea = questArea;
     }
 
     /**
@@ -146,7 +146,7 @@ public class Quest {
      * @return the quest xp
      */
     public int getQuestXP() {
-        return quest_xp;
+        return questXP;
     }
 
     /**
@@ -155,7 +155,7 @@ public class Quest {
      * @param questXP the quest xp
      */
     public void setQuestXP(int questXP) {
-        this.quest_xp = questXP;
+        this.questXP = questXP;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Quest {
      * @return the quest reward
      */
     public String getQuestReward() {
-        return quest_reward;
+        return questReward;
     }
 
     /**
@@ -173,7 +173,7 @@ public class Quest {
      * @param questReward the quest reward
      */
     public void setQuestReward(String questReward) {
-        this.quest_reward = questReward;
+        this.questReward = questReward;
     }
 
     /**
@@ -183,12 +183,12 @@ public class Quest {
     @Override
     public String toString() {
         return "Quest{" +
-                "questId=" + quest_id +
-                ", questName='" + quest_name + '\'' +
-                ", questLevelRequirement=" + quest_level_requirement +
-                ", questArea='" + quest_area + '\'' +
-                ", questXP=" + quest_xp +
-                ", questReward='" + quest_reward + '\'' +
+                "questId=" + id +
+                ", questName='" + questName + '\'' +
+                ", questLevelRequirement=" + questLevelRequirement +
+                ", questArea='" + questArea + '\'' +
+                ", questXP=" + questXP +
+                ", questReward='" + questReward + '\'' +
                 '}';
     }
 }
