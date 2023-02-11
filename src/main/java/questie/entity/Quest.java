@@ -14,17 +14,17 @@ public class Quest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native", strategy = "native")
-    private int questId;
+    private int quest_id;
     @Column(name= "quest_name")
-    private String questName;
+    private String quest_name;
     @Column(name= "quest_level_requirement")
-    private int questLevelRequirement;
-    @Column(name= "quest_area")
-    private String questArea;
+    private int quest_level_requirement;
     @Column(name= "quest_xp")
-    private int questXP;
+    private int quest_xp;
+    @Column(name= "quest_area")
+    private String quest_area;
     @Column(name= "quest_reward")
-    private String questReward;
+    private String quest_reward;
 
     /**
      * Instantiates a new Quest.
@@ -37,16 +37,16 @@ public class Quest {
      *
      * @param questName             the quest name
      * @param questLevelRequirement the quest level requirement
-     * @param questArea             the quest area
      * @param questXP               the quest xp
+     * @param questArea             the quest area
      * @param questReward           the quest reward
      */
-    public Quest(String questName, int questLevelRequirement, String questArea, int questXP, String questReward) {
-        this.questName = questName;
-        this.questLevelRequirement = questLevelRequirement;
-        this.questArea = questArea;
-        this.questXP = questXP;
-        this.questReward = questReward;
+    public Quest(String questName, int questLevelRequirement, int questXP, String questArea, String questReward) {
+        this.quest_name = questName;
+        this.quest_level_requirement = questLevelRequirement;
+        this.quest_xp = questXP;
+        this.quest_area = questArea;
+        this.quest_reward = questReward;
     }
 
     /**
@@ -55,17 +55,17 @@ public class Quest {
      * @param questId               the quest id
      * @param questName             the quest name
      * @param questLevelRequirement the quest level requirement
-     * @param questArea             the quest area
      * @param questXP               the quest xp
+     * @param questArea             the quest area
      * @param questReward           the quest reward
      */
-    public Quest(int questId, String questName, int questLevelRequirement, String questArea, int questXP, String questReward) {
-        this.questId = questId;
-        this.questName = questName;
-        this.questLevelRequirement = questLevelRequirement;
-        this.questArea = questArea;
-        this.questXP = questXP;
-        this.questReward = questReward;
+    public Quest(int questId, String questName, int questLevelRequirement, int questXP, String questArea, String questReward) {
+        this.quest_id = questId;
+        this.quest_name = questName;
+        this.quest_level_requirement = questLevelRequirement;
+        this.quest_xp = questXP;
+        this.quest_area = questArea;
+        this.quest_reward = questReward;
     }
 
     /**
@@ -74,7 +74,7 @@ public class Quest {
      * @return the quest id
      */
     public int getQuestId() {
-        return questId;
+        return quest_id;
     }
 
     /**
@@ -83,7 +83,7 @@ public class Quest {
      * @param questId the quest id
      */
     public void setQuestId(int questId) {
-        this.questId = questId;
+        this.quest_id = questId;
     }
 
     /**
@@ -92,7 +92,7 @@ public class Quest {
      * @return the quest name
      */
     public String getQuestName() {
-        return questName;
+        return quest_name;
     }
 
     /**
@@ -101,7 +101,7 @@ public class Quest {
      * @param questName the quest name
      */
     public void setQuestName(String questName) {
-        this.questName = questName;
+        this.quest_name = questName;
     }
 
     /**
@@ -110,7 +110,7 @@ public class Quest {
      * @return the quest level requirement
      */
     public int getQuestLevelRequirement() {
-        return questLevelRequirement;
+        return quest_level_requirement;
     }
 
     /**
@@ -119,7 +119,7 @@ public class Quest {
      * @param questLevelRequirement the quest level requirement
      */
     public void setQuestLevelRequirement(int questLevelRequirement) {
-        this.questLevelRequirement = questLevelRequirement;
+        this.quest_level_requirement = questLevelRequirement;
     }
 
     /**
@@ -128,7 +128,7 @@ public class Quest {
      * @return the quest area
      */
     public String getQuestArea() {
-        return questArea;
+        return quest_area;
     }
 
     /**
@@ -137,7 +137,7 @@ public class Quest {
      * @param questArea the quest area
      */
     public void setQuestArea(String questArea) {
-        this.questArea = questArea;
+        this.quest_area = questArea;
     }
 
     /**
@@ -146,7 +146,7 @@ public class Quest {
      * @return the quest xp
      */
     public int getQuestXP() {
-        return questXP;
+        return quest_xp;
     }
 
     /**
@@ -155,7 +155,7 @@ public class Quest {
      * @param questXP the quest xp
      */
     public void setQuestXP(int questXP) {
-        this.questXP = questXP;
+        this.quest_xp = questXP;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Quest {
      * @return the quest reward
      */
     public String getQuestReward() {
-        return questReward;
+        return quest_reward;
     }
 
     /**
@@ -173,7 +173,7 @@ public class Quest {
      * @param questReward the quest reward
      */
     public void setQuestReward(String questReward) {
-        this.questReward = questReward;
+        this.quest_reward = questReward;
     }
 
     /**
@@ -183,12 +183,12 @@ public class Quest {
     @Override
     public String toString() {
         return "Quest{" +
-                "questId=" + questId +
-                ", questName='" + questName + '\'' +
-                ", questLevelRequirement=" + questLevelRequirement +
-                ", questArea='" + questArea + '\'' +
-                ", questXP=" + questXP +
-                ", questReward='" + questReward + '\'' +
+                "questId=" + quest_id +
+                ", questName='" + quest_name + '\'' +
+                ", questLevelRequirement=" + quest_level_requirement +
+                ", questArea='" + quest_area + '\'' +
+                ", questXP=" + quest_xp +
+                ", questReward='" + quest_reward + '\'' +
                 '}';
     }
 }

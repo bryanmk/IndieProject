@@ -23,11 +23,11 @@
     <tbody>
     <c:forEach var="quest" items="${quests}">
       <tr>
-        <td>${quest.questName}</td>
-        <td>${quest.questArea}</td>
-        <td>${quest.questLevelRequirement}</td>
-        <td>${quest.questXP}</td>
-        <td>${quest.questReward}</td>
+        <td>${quest.quest_name}</td>
+        <td>${quest.quest_area}</td>
+        <td>${quest.quest_level_requirement}</td>
+        <td>${quest.quest_xp}</td>
+        <td>${quest.quest_reward}</td>
       </tr>
     </c:forEach>
     </tbody>
