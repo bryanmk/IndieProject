@@ -82,16 +82,16 @@ class QuestDAOTest {
     /**
      * Verifies update success.
      */
-//    @Test
-//    void updateSuccess() {
-//        String newQuestName = "Cursed to Wither";
-//        Quest questToUpdate = dao.getByQuestId(1);
-//        questToUpdate.setQuestName(newQuestName);
-//        logger.info("new quest name: " + newQuestName);
-//        dao.saveOrUpdate(questToUpdate);
-//        Quest retrievedQuest = dao.getByQuestId(1);
-//        assertEquals(newQuestName, retrievedQuest.getQuestName());
-//    }
+    @Test
+    void updateSuccess() {
+        String newQuestName = "Cursed to Wither";
+        Quest questToUpdate = dao.getByQuestId(1);
+        questToUpdate.setQuestName(newQuestName);
+        logger.info("new quest name: " + newQuestName);
+        dao.saveOrUpdate(questToUpdate);
+        Quest retrievedQuest = dao.getByQuestId(1);
+        assertEquals(newQuestName, retrievedQuest.getQuestName());
+    }
 
     /**
      * Verify successful get by property (equal match)

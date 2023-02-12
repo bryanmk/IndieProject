@@ -98,7 +98,9 @@ public class QuestDAO {
      */
     public void saveOrUpdate(Quest quest) {
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(quest);
+        transaction.commit();
         session.close();
     }
 

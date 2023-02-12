@@ -83,16 +83,16 @@ class UserDAOTest {
     /**
      * Verifies update success.
      */
-//    @Test
-//    void updateSuccess() {
-//        String newLastName = "Davis";
-//        User userToUpdate = dao.getById(3);
-//        userToUpdate.setLastName(newLastName);
-//        logger.info("new last name: " + newLastName);
-//        dao.saveOrUpdate(userToUpdate);
-//        User retrievedUser = dao.getById(3);
-//        assertEquals(newLastName, retrievedUser.getLastName());
-//    }
+    @Test
+    void updateSuccess() {
+        String newLastName = "Davis";
+        User userToUpdate = dao.getById(3);
+        userToUpdate.setLastName(newLastName);
+        logger.info("new last name: " + newLastName);
+        dao.saveOrUpdate(userToUpdate);
+        User retrievedUser = dao.getById(3);
+        assertEquals(newLastName, retrievedUser.getLastName());
+    }
 
     /**
      * Verify successful get by property (equal match)
