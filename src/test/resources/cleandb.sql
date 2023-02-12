@@ -7,7 +7,7 @@ INSERT INTO User VALUES ('Joe','Coyne','jcoyne', 1),
                         ('Dawn','Tillman','dtillman', 6);
 
 delete from Quest;
-INSERT INTO Quest VALUES (1, 'A Dying World', 10, 180, 'Silithus', ''),
+INSERT INTO Quest VALUES (1, 'A Dying World', 10, 180, 'Silithus', '2 Gold, 57 Silver, 40 Bronze'),
                          (2, 'Just Following Orders', 20, 2750, 'Sholazar Basin', '10 Gold, 50 Silver'),
                          (3, 'Off To Area 52', 25, 860, 'Netherstorm', '2 Gold, 62 Silver, 50 Bronze'),
                          (4, 'Journey To The Timeless Isle', 30, 520, 'Timeless Isle', 'Curious Bronze Timepiece'),
