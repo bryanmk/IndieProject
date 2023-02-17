@@ -1,8 +1,8 @@
-package questie.api;
+package quest.index.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Key{
+public class Types{
 
 	@JsonProperty("href")
 	private String href;
@@ -18,7 +18,7 @@ public class Key{
 	@Override
  	public String toString(){
 		return 
-			"Key{" + 
+			"Types{" + 
 			"href = '" + href + '\'' + 
 			"}";
 		}

@@ -1,8 +1,8 @@
-package questie.api;
+package areas.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Area{
+public class QuestsItem{
 
 	@JsonProperty("name")
 	private String name;
@@ -40,7 +40,7 @@ public class Area{
 	@Override
  	public String toString(){
 		return 
-			"Area{" + 
+			"QuestsItem{" + 
 			"name = '" + name + '\'' + 
 			",id = '" + id + '\'' + 
 			",key = '" + key + '\'' + 

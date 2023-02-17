@@ -1,8 +1,8 @@
-package questie.api;
+package categories.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Reward{
+public class QuestsItem{
 
 	@JsonProperty("name")
 	private String name;
@@ -40,7 +40,7 @@ public class Reward{
 	@Override
  	public String toString(){
 		return 
-			"Reward{" + 
+			"QuestsItem{" + 
 			"name = '" + name + '\'' + 
 			",id = '" + id + '\'' + 
 			",key = '" + key + '\'' + 

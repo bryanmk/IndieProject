@@ -1,4 +1,4 @@
-package questie.api;
+package type.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
