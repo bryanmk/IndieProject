@@ -13,8 +13,8 @@
 | 2/10 | Got through testing User class and deploying app, but can't get search results                       | 3    | sql grammar exception could not extract result set                                                                                          |
 | 2/11 | Fixed user search results, refactored jsp's to also have quests search option on index               | 3    | all quest stuff not tested yet                                                                                                              |
 | 2/12 | Built all of the test database for quests, built questDaoTest class and got everything working       | 2    | just have exercise css format for now, will pretty everything up at some point, but for now I'm going for functionality and its lookin good |
-|||||
-|||||
+| 2/16 | Figured out more or less how to get oauth tokens and use battlenet api's                             | 2    ||
+| 2/17 | Got all quest-related api's into their own directories                                               | 2    | thought a good amount of how to build out project. I think not using any of my own databases would be preferred.                            |
 |||||
 |||||
 |||||
