@@ -11,5 +11,6 @@
         <property name="hibernate.c3p0.idle_test_period">3000</property>
         <mapping class="questie.entity.User"/>
         <mapping class="questie.entity.Quest"/>
+        <mapping class="questie.entity.Favorite"/>
     </session-factory>
 </hibernate-configuration>

@@ -4,6 +4,9 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * User javabean.
  */
@@ -21,6 +24,8 @@ public class User {
     private String lastName;
     @Column(name= "gamertag")
     private String gamertag;
+
+    private Set<Favorite> favorites = new HashSet<>;
 
     /**
      * Instantiates a new User.
@@ -126,6 +131,24 @@ public class User {
      */
     public void setGamertag(String gamertag) {
         this.gamertag = gamertag;
+    }
+
+    /**
+     * Gets favorites.
+     *
+     * @return the favorites
+     */
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    /**
+     * Sets favorites.
+     *
+     * @param favorites the favorites
+     */
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
     }
 
     /**
