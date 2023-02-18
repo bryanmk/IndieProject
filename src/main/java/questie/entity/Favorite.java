@@ -1,7 +1,8 @@
 package questie.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 /**
  * The type Favorite.
@@ -9,8 +10,11 @@ import javax.persistence.Table;
 @Entity(name = "Favorite")
 @Table(name = "Favorite")
 public class Favorite {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+    @ManyToOne
     private User user;
 
     /**

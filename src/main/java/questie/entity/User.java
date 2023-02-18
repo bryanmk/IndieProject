@@ -24,7 +24,7 @@ public class User {
     private String lastName;
     @Column(name= "gamertag")
     private String gamertag;
-
+    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Favorite> favorites = new HashSet<>;
 
     /**
