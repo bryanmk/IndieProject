@@ -17,3 +17,16 @@ INSERT INTO Quest VALUES (1, 'A Dying World', 10, 180, 'Silithus', '2 Gold, 57 S
                          (8, 'Assault: The Black Empire', 50, 10250, 'Vale of Eternal Blossoms', 'Cache of the Black Empire'),
                          (9, 'A Dragons Day Off', 60, 11350, 'The Waking Shores', 'Spyragos'),
                          (10, 'A Ruby Lifecalling', 60, 4550, 'The Waking Shores', '14 Gold, 4 Silver, 50 Bronze');
+
+delete from Favorite;
+Insert INTO Favorite VALUES (1, 2),
+                            (2, 3),
+                            (3, 2),
+                            (4, 3),
+                            (5, 4),
+                            (6, 1),
+                            (7, 1),
+                            (8, 6),
+                            (9, 4),
+                            (10, 5),
+                            (11, 2);
