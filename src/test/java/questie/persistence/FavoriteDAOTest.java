@@ -59,14 +59,14 @@ class FavoriteDAOTest {
         UserDAO userDao = new UserDAO();
         User user = userDao.getById(1);
 
-        Favorite newFavorite = new Favorite(user);
+        Favorite newFavorite = new Favorite(12, user);
         user.addFavorite(newFavorite);
 
         int id = dao.insert(newFavorite);
 
         assertNotEquals(0,id);
         Favorite insertedFavorite = dao.getById(id);
-        assertEquals(18, insertedFavorite.getId());
+        assertEquals(12, insertedFavorite.getId());
         assertEquals(3, user.getFavorites().size());
         assertEquals("Joe", user.getFirstName());
     }

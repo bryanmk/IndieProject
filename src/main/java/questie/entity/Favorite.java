@@ -33,6 +33,17 @@ public class Favorite {
     }
 
     /**
+     * Instantiates a new Favorite.
+     *
+     * @param id   the id
+     * @param user the user
+     */
+    public Favorite(int id, User user) {
+        this.id = id;
+        this.user = user;
+    }
+
+    /**
      * Gets id.
      *
      * @return the id
