@@ -62,7 +62,7 @@ class UserDAOTest {
      * Verify successful insert of a user
      */
     @Test
-    void insertSuccess() {
+    void insertWithFavoriteSuccess() {
 
         User newUser = new User("Fred", "Flintstone", "fflintstone");
         int id = dao.insert(newUser);

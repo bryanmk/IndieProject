@@ -152,6 +152,26 @@ public class User {
     }
 
     /**
+     * Add favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void addFavorite(Favorite favorite) {
+        favorites.add(favorite);
+        favorite.setUser(this);
+    }
+
+    /**
+     * Remove favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void removeFavorite(Favorite favorite) {
+        favorites.remove(favorite);
+        favorite.setUser(null);
+    }
+
+    /**
      * Creates a string representation of a User.
      * @return string representation of a User.
      */
