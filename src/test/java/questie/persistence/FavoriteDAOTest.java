@@ -59,14 +59,12 @@ class FavoriteDAOTest {
         UserDAO userDao = new UserDAO();
         User user = userDao.getById(1);
 
-        Favorite newFavorite = new Favorite(12, user);
+        Favorite newFavorite = new Favorite(user);
         user.addFavorite(newFavorite);
 
         int id = dao.insert(newFavorite);
 
         assertNotEquals(0,id);
-        Favorite insertedFavorite = dao.getById(id);
-        assertEquals(12, insertedFavorite.getId());
         assertEquals(3, user.getFavorites().size());
         assertEquals("Joe", user.getFirstName());
     }
@@ -83,23 +81,24 @@ class FavoriteDAOTest {
     /**
      * Verifies update success.
      */
-//    @Test
-//    void updateSuccess() {
-//        String newLastName = "Davis";
-//        Favorite favoriteToUpdate = dao.getById(3);
-//        favoriteToUpdate.setLastName(newLastName);
-//        logger.info("new last name: " + newLastName);
-//        dao.saveOrUpdate(favoriteToUpdate);
-//        Favorite retrievedFavorite = dao.getById(3);
-//        assertEquals(newLastName, retrievedFavorite.getLastName());
-//    }
+    @Test
+    void updateSuccess() {
+        UserDAO userDao = new UserDAO();
+        User user = userDao.getById(5);
+        Favorite favoriteToUpdate = dao.getById(3);
+        favoriteToUpdate.setUser(user);
+        logger.info("new user:" + user.getFirstName());
+        dao.saveOrUpdate(favoriteToUpdate);
+        Favorite retrievedFavorite = dao.getById(3);
+        assertEquals("Dianne", retrievedFavorite.getUser().getFirstName());
+    }
 
     /**
      * Verify successful get by property (equal match)
      */
 //    @Test
 //    void getByPropertyEqualSuccess() {
-//        List<Favorite> favorites = dao.getByPropertyEqual("lastName", "Curry");
+//        List<Favorite> favorites = dao.getByPropertyEqual("id", 2);
 //        assertEquals(1, favorites.size());
 //        assertEquals(3, favorites.get(0).getId());
 //    }
