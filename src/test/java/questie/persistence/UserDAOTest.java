@@ -2,6 +2,7 @@ package questie.persistence;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import questie.entity.Favorite;
 import questie.entity.User;
 import questie.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -65,10 +66,17 @@ class UserDAOTest {
     void insertWithFavoriteSuccess() {
 
         User newUser = new User("Fred", "Flintstone", "fflintstone");
+
+        Favorite favorite = new Favorite(newUser);
+
+        newUser.addFavorite(favorite);
+
         int id = dao.insert(newUser);
+
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
         assertEquals("Fred", insertedUser.getFirstName());
+        assertEquals(1, insertedUser.getFavorites().size());
     }
 
     /**
