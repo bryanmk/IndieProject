@@ -40,7 +40,7 @@ class FavoriteDAOTest {
      */
     @Test
     void getAllFavoritesSuccess() {
-        List<Favorite> favorites = dao.getAll();
+        List<Favorite> favorites = (List<Favorite>)genericDAO.getAll();
         assertEquals(11, favorites.size());
     }
 
@@ -78,8 +78,8 @@ class FavoriteDAOTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        genericDAO.delete(genericDAO.getById(3));
+        assertNull(genericDAO.getById(3));
     }
 
     /**
