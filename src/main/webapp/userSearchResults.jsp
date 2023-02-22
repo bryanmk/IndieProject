@@ -16,12 +16,18 @@
         <thead>
             <th>Name</th>
             <th>Gamertag</th>
+            <th>Favorites</th>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">
             <tr>
                 <td>${user.firstName} ${user.lastName}</td>
                 <td>${user.gamertag}</td>
+                <td>
+                    <c:forEach var="favorite" items="${user.favorites}">
+                        ${favorite.id} <br>
+                    </c:forEach>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
