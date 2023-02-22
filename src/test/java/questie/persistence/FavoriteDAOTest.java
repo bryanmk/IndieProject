@@ -20,15 +20,18 @@ class FavoriteDAOTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     FavoriteDAO dao;
+    GenericDAO genericDAO;
 
     /**
      * Creating the dao.
      */
     @BeforeEach
     void setUp() {
+        dao = new FavoriteDAO();
+        genericDAO = new GenericDAO(Favorite.class);
+
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new FavoriteDAO();
     }
 
     /**
@@ -45,7 +48,7 @@ class FavoriteDAOTest {
      */
     @Test
     void getByIdSuccess() {
-        Favorite retrievedFavorite = dao.getById(3);
+        Favorite retrievedFavorite = (Favorite)genericDAO.getById(3);
         assertNotNull(retrievedFavorite);
         assertEquals(3, retrievedFavorite.getId());
     }

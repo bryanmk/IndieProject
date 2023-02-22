@@ -22,8 +22,8 @@ public class Favorite {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-    @OneToMany(mappedBy = "favorite", fetch = FetchType.EAGER)
-    private Set<FavoriteQuest> quests = new HashSet<>();
+//    @OneToMany(mappedBy = "favorite", fetch = FetchType.EAGER)
+//    private Set<FavoriteQuest> quests = new HashSet<>();
 
     /**
      * No argument constructor.
@@ -87,53 +87,53 @@ public class Favorite {
         this.user = user;
     }
 
-    /**
-     * Gets quests.
-     *
-     * @return the quests
-     */
-    public Set<FavoriteQuest> getQuests() {
-        return quests;
-    }
-
-    /**
-     * Sets quests.
-     *
-     * @param quests the quests
-     */
-    public void setQuests(Set<FavoriteQuest> quests) {
-        this.quests = quests;
-    }
+//    /**
+//     * Gets quests.
+//     *
+//     * @return the quests
+//     */
+//    public Set<FavoriteQuest> getQuests() {
+//        return quests;
+//    }
+//
+//    /**
+//     * Sets quests.
+//     *
+//     * @param quests the quests
+//     */
+//    public void setQuests(Set<FavoriteQuest> quests) {
+//        this.quests = quests;
+//    }
 
     /**
      * Add quest.
      *
      * @param quest the quest
      */
-    public void addQuest(Quest quest) {
-        FavoriteQuest favoriteQuest = new FavoriteQuest(this, quest);
-        quests.add(favoriteQuest);
-    }
+//    public void addQuest(Quest quest) {
+//        FavoriteQuest favoriteQuest = new FavoriteQuest(this, quest);
+//        quests.add(favoriteQuest);
+//    }
 
     /**
      * Remove quest.
      *
      * @param quest the quest
      */
-    public void removeQuest(Quest quest) {
-        for (Iterator<FavoriteQuest> iterator = quests.iterator();
-            iterator.hasNext(); ) {
-            FavoriteQuest favoriteQuest = iterator.hasNext();
-
-            if (favoriteQuest.getQuest().equals(this) &&
-                    favoriteQuest.getFavorite().equals(quest)) {
-                iterator.remove();
-                favoriteQuest.getQuest().getFavorites().remove(favoriteQuest);
-                favoriteQuest.setQuest(null);
-                favoriteQuest.setFavorite(null);
-            }
-        }
-    }
+//    public void removeQuest(Quest quest) {
+//        for (Iterator<FavoriteQuest> iterator = quests.iterator();
+//            iterator.hasNext(); ) {
+//            FavoriteQuest favoriteQuest = iterator.hasNext();
+//
+//            if (favoriteQuest.getQuest().equals(this) &&
+//                    favoriteQuest.getFavorite().equals(quest)) {
+//                iterator.remove();
+//                favoriteQuest.getQuest().getFavorites().remove(favoriteQuest);
+//                favoriteQuest.setQuest(null);
+//                favoriteQuest.setFavorite(null);
+//            }
+//        }
+//    }
 
     @Override
     public String toString() {

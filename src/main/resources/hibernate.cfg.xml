@@ -1,6 +1,7 @@
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://awseb-e-du475xxcsb-stack-awsebrdsdatabase-mqmwxgzupezt.cenudwkacxrw.eu-north-1.rds.amazonaws.com:3306/questie</property>
+<!--        <property name="connection.url">jdbc:mysql://awseb-e-du475xxcsb-stack-awsebrdsdatabase-mqmwxgzupezt.cenudwkacxrw.eu-north-1.rds.amazonaws.com:3306/questie</property>-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/questie</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">student</property>
         <property name="connection.password">students</property>

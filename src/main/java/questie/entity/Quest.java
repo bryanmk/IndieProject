@@ -3,9 +3,7 @@ package questie.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Quest Javabean.
@@ -28,8 +26,9 @@ public class Quest {
     private String questArea;
     @Column(name= "quest_reward")
     private String questReward;
-    @OneToMany(mappedBy = "quest", fetch = FetchType.EAGER)
-    private Set<FavoriteQuest> favorites = new HashSet<>();
+
+//    @OneToMany(mappedBy = "quest", fetch = FetchType.EAGER)
+//    private Set<FavoriteQuest> favorites = new HashSet<>();
 
     /**
      * Instantiates a new Quest.
@@ -181,23 +180,23 @@ public class Quest {
         this.questReward = questReward;
     }
 
-    /**
-     * Gets favorites.
-     *
-     * @return the favorites
-     */
-    public Set<FavoriteQuest> getFavorites() {
-        return favorites;
-    }
-
-    /**
-     * Sets favorites.
-     *
-     * @param favorites the favorites
-     */
-    public void setFavorites(Set<FavoriteQuest> favorites) {
-        this.favorites = favorites;
-    }
+//    /**
+//     * Gets favorites.
+//     *
+//     * @return the favorites
+//     */
+//    public Set<FavoriteQuest> getFavorites() {
+//        return favorites;
+//    }
+//
+//    /**
+//     * Sets favorites.
+//     *
+//     * @param favorites the favorites
+//     */
+//    public void setFavorites(Set<FavoriteQuest> favorites) {
+//        this.favorites = favorites;
+//    }
 
     @Override
     public String toString() {
