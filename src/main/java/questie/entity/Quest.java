@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -198,10 +199,6 @@ public class Quest {
         this.favorites = favorites;
     }
 
-    /**
-     * Creates a string representation of a quest object.
-     * @return string representation of a quest object.
-     */
     @Override
     public String toString() {
         return "Quest{" +
@@ -212,5 +209,18 @@ public class Quest {
                 ", questXP=" + questXP +
                 ", questReward='" + questReward + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Quest quest = (Quest) o;
+        return id == quest.id && questLevelRequirement == quest.questLevelRequirement && questXP == quest.questXP && Objects.equals(questName, quest.questName) && Objects.equals(questArea, quest.questArea) && Objects.equals(questReward, quest.questReward);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, questName, questLevelRequirement, questXP, questArea, questReward);
     }
 }

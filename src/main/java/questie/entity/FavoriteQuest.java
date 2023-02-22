@@ -3,6 +3,7 @@ package questie.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type Favorite quest.
@@ -114,5 +115,18 @@ public class FavoriteQuest {
                 ", favorite=" + favorite +
                 ", quest=" + quest +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FavoriteQuest that = (FavoriteQuest) o;
+        return id == that.id && Objects.equals(favorite, that.favorite) && Objects.equals(quest, that.quest);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, favorite, quest);
     }
 }

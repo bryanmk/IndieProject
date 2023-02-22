@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -134,15 +135,24 @@ public class Favorite {
         }
     }
 
-    /**
-     * Creates a string representation of a user's favorites.
-     * @return string representation of a user's favorites.
-     */
     @Override
     public String toString() {
         return "Favorite{" +
                 "id=" + id +
                 ", user=" + user +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Favorite favorite = (Favorite) o;
+        return id == favorite.id && Objects.equals(user, favorite.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user);
     }
 }

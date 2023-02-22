@@ -12,5 +12,6 @@
         <mapping class="questie.entity.User"/>
         <mapping class="questie.entity.Quest"/>
         <mapping class="questie.entity.Favorite"/>
+        <mapping class="questie.entity.FavoriteQuest"/>
     </session-factory>
 </hibernate-configuration>
