@@ -18,12 +18,13 @@ public class Favorite {
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    @Id
+
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+//    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-//    @OneToMany(mappedBy = "favorite", fetch = FetchType.EAGER)
-//    private Set<FavoriteQuest> quests = new HashSet<>();
+
+    @OneToMany(mappedBy = "favorite", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<FavoriteQuest> quests = new HashSet<>();
 
     /**
      * No argument constructor.

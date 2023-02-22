@@ -27,8 +27,8 @@ public class Quest {
     @Column(name= "quest_reward")
     private String questReward;
 
-//    @OneToMany(mappedBy = "quest", fetch = FetchType.EAGER)
-//    private Set<FavoriteQuest> favorites = new HashSet<>();
+    @OneToMany(mappedBy = "quest", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<FavoriteQuest> favorites = new HashSet<>();
 
     /**
      * Instantiates a new Quest.

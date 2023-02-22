@@ -3,6 +3,7 @@ package questie.persistence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import questie.entity.User;
+import questie.entity.Quest;
 import questie.entity.Favorite;
 import questie.util.Database;
 import org.junit.jupiter.api.BeforeEach;
