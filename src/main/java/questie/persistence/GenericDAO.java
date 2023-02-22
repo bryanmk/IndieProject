@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import questie.entity.Favorite;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -32,6 +33,20 @@ public class GenericDAO<T> {
     }
 
     /**
+     * Gets all entities
+     * @return all the entities
+     */
+    public List<T> getAll() {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        List<T> list = session.createQuery(query).getResultList();
+        session.close();
+        return list;
+    }
+
+    /**
      * Gets an entity by id
      * @param id entity id to search by
      * @return an entity
@@ -56,17 +71,13 @@ public class GenericDAO<T> {
         session.close();
     }
 
-    /**
-     * Gets all entities
-     * @return all the entities
-     */
-    public List<T> getAll() {
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        List<T> list = session.createQuery(query).getResultList();
-        session.close();
-        return list;
-    }
+//    public void saveOrUpdate(Favorite favorite) {
+//        Session session = sessionFactory.openSession();
+//        Transaction transaction = session.beginTransaction();
+//        session.saveOrUpdate(favorite);
+//        transaction.commit();
+//        session.close();
+//    }
+
+
 }
