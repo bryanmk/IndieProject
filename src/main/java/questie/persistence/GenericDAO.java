@@ -71,13 +71,18 @@ public class GenericDAO<T> {
         session.close();
     }
 
-//    public void saveOrUpdate(Favorite favorite) {
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        session.saveOrUpdate(favorite);
-//        transaction.commit();
-//        session.close();
-//    }
+    /**
+     * Save or update.
+     *
+     * @param entity the entity
+     */
+    public void saveOrUpdate(T entity) {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        session.saveOrUpdate(entity);
+        transaction.commit();
+        session.close();
+    }
 
 
 }

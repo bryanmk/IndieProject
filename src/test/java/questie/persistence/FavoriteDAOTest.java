@@ -89,11 +89,11 @@ class FavoriteDAOTest {
     void updateSuccess() {
         UserDAO userDao = new UserDAO();
         User user = userDao.getById(5);
-        Favorite favoriteToUpdate = dao.getById(3);
+        Favorite favoriteToUpdate = (Favorite)genericDAO.getById(3);
         favoriteToUpdate.setUser(user);
         logger.info("new user:" + user.getFirstName());
-        dao.saveOrUpdate(favoriteToUpdate);
-        Favorite retrievedFavorite = dao.getById(3);
+        genericDAO.saveOrUpdate(favoriteToUpdate);
+        Favorite retrievedFavorite = (Favorite)genericDAO.getById(3);
         assertEquals("Dianne", retrievedFavorite.getUser().getFirstName());
     }
 
