@@ -100,5 +100,28 @@ public class GenericDAO<T> {
         return id;
     }
 
+    /**
+     * Gets by property equal.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property equal
+     */
+    public List<T> getByPropertyEqual(String propertyName, String value) {
+
+        Session session = getSession();
+
+        logger.debug("Searching for favorite with " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> favorites = session.createQuery(query).getResultList();
+
+        session.close();
+        return favorites;
+    }
+
 
 }

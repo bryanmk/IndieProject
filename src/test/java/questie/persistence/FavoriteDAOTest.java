@@ -100,12 +100,12 @@ class FavoriteDAOTest {
     /**
      * Verify successful get by property (equal match)
      */
-//    @Test
-//    void getByPropertyEqualSuccess() {
-//        List<Favorite> favorites = dao.getByPropertyEqual("id", 2);
-//        assertEquals(1, favorites.size());
-//        assertEquals(3, favorites.get(0).getId());
-//    }
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Favorite> favorites = favoriteDAO.getByPropertyEqual("id", "2");
+        assertEquals(1, favorites.size());
+        assertEquals(2, favorites.get(0).getId());
+    }
 
     /**
      * Verify successful get by property (like match)
