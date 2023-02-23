@@ -9,6 +9,7 @@ import questie.entity.Favorite;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -123,5 +124,28 @@ public class GenericDAO<T> {
         return favorites;
     }
 
+    /**
+     * Gets by property like.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property like
+     */
+    public List<T> getByPropertyLike(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for favorite with {} = {}",  propertyName, value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        Expression<String> propertyPath = root.get(propertyName);
+
+        query.where(builder.like(propertyPath, "%" + value + "%"));
+
+        List<T> favorites = session.createQuery(query).getResultList();
+        session.close();
+        return favorites;
+    }
 
 }
