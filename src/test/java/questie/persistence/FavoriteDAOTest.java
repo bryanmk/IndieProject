@@ -20,16 +20,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class FavoriteDAOTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
-    FavoriteDAO dao;
-    GenericDAO genericDAO;
+    GenericDAO favoriteDAO;
+    GenericDAO userDAO;
 
     /**
      * Creating the dao.
      */
     @BeforeEach
     void setUp() {
-        dao = new FavoriteDAO();
-        genericDAO = new GenericDAO(Favorite.class);
+
+        favoriteDAO = new GenericDAO(Favorite.class);
+        userDAO = new GenericDAO(User.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -40,7 +41,7 @@ class FavoriteDAOTest {
      */
     @Test
     void getAllFavoritesSuccess() {
-        List<Favorite> favorites = (List<Favorite>)genericDAO.getAll();
+        List<Favorite> favorites = (List<Favorite>)favoriteDAO.getAll();
         assertEquals(11, favorites.size());
     }
 
@@ -49,7 +50,7 @@ class FavoriteDAOTest {
      */
     @Test
     void getByIdSuccess() {
-        Favorite retrievedFavorite = (Favorite)genericDAO.getById(3);
+        Favorite retrievedFavorite = (Favorite)favoriteDAO.getById(3);
         assertNotNull(retrievedFavorite);
         assertEquals(3, retrievedFavorite.getId());
     }
@@ -60,13 +61,12 @@ class FavoriteDAOTest {
     @Test
     void insertWithFavoriteSuccess() {
 
-        UserDAO userDao = new UserDAO();
-        User user = userDao.getById(1);
+        User user = (User)userDAO.getById(1);
 
         Favorite newFavorite = new Favorite(user);
         user.addFavorite(newFavorite);
 
-        int id = dao.insert(newFavorite);
+        int id = favoriteDAO.insert(newFavorite);
 
         assertNotEquals(0,id);
         assertEquals(3, user.getFavorites().size());
@@ -78,8 +78,8 @@ class FavoriteDAOTest {
      */
     @Test
     void deleteSuccess() {
-        genericDAO.delete(genericDAO.getById(3));
-        assertNull(genericDAO.getById(3));
+        favoriteDAO.delete(favoriteDAO.getById(3));
+        assertNull(favoriteDAO.getById(3));
     }
 
     /**
@@ -89,11 +89,11 @@ class FavoriteDAOTest {
     void updateSuccess() {
         UserDAO userDao = new UserDAO();
         User user = userDao.getById(5);
-        Favorite favoriteToUpdate = (Favorite)genericDAO.getById(3);
+        Favorite favoriteToUpdate = (Favorite)favoriteDAO.getById(3);
         favoriteToUpdate.setUser(user);
         logger.info("new user:" + user.getFirstName());
-        genericDAO.saveOrUpdate(favoriteToUpdate);
-        Favorite retrievedFavorite = (Favorite)genericDAO.getById(3);
+        favoriteDAO.saveOrUpdate(favoriteToUpdate);
+        Favorite retrievedFavorite = (Favorite)favoriteDAO.getById(3);
         assertEquals("Dianne", retrievedFavorite.getUser().getFirstName());
     }
 
