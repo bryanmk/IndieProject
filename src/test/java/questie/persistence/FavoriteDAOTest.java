@@ -87,8 +87,8 @@ class FavoriteDAOTest {
      */
     @Test
     void updateSuccess() {
-        UserDAO userDao = new UserDAO();
-        User user = userDao.getById(5);
+
+        User user = (User)userDAO.getById(5);
         Favorite favoriteToUpdate = (Favorite)favoriteDAO.getById(3);
         favoriteToUpdate.setUser(user);
         logger.info("new user:" + user.getFirstName());
