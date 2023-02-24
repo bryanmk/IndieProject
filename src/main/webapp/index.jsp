@@ -20,5 +20,14 @@
     <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
     <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View all quests</button>
 </form>
+<br><br>
+<form action="searchQuestAPI" class="form-inline">
+    <div class="form-group">
+        <label for="questApiSearchTerm">API Quest Search</label>
+        <input type="text" class="form-control" id="questApiSearchTerm" name="questApiSearchTerm" aria-describedby="searchTermHelp" placeholder="">
+    </div>
+    <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
+    <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View all quests</button>
+</form>
 </body>
 </html>

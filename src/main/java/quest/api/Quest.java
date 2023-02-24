@@ -1,7 +1,9 @@
 package quest.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Quest{
 
 	@JsonProperty("area")
@@ -83,15 +85,15 @@ public class Quest{
 
 	@Override
  	public String toString(){
-		return 
-			"Quest{" + 
-			"area = '" + area + '\'' + 
-			",requirements = '" + requirements + '\'' + 
-			",_links = '" + links + '\'' + 
-			",description = '" + description + '\'' + 
-			",id = '" + id + '\'' + 
-			",title = '" + title + '\'' + 
-			",rewards = '" + rewards + '\'' + 
+		return
+			"Quest{" +
+			"area = '" + area + '\'' +
+			",requirements = '" + requirements + '\'' +
+			",_links = '" + links + '\'' +
+			",description = '" + description + '\'' +
+			",id = '" + id + '\'' +
+			",title = '" + title + '\'' +
+			",rewards = '" + rewards + '\'' +
 			"}";
 		}
 }
