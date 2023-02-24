@@ -45,20 +45,11 @@ class UserDAOTest {
     }
 
     /**
-     * Verifies getUsersByLastName success.
-     */
-    @Test
-    void getUsersByLastNameSuccess() {
-        List<User> users = dao.getByLastName("c");
-        assertEquals(3, users.size());
-    }
-
-    /**
      * Verifies a user is returned correctly based on Id search.
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = dao.getById(3);
+        User retrievedUser = (User)userDao.getById(3);
         assertNotNull(retrievedUser);
         assertEquals("Barney", retrievedUser.getFirstName());
     }
@@ -75,10 +66,10 @@ class UserDAOTest {
 
         newUser.addFavorite(favorite);
 
-        int id = dao.insert(newUser);
+        int id = userDao.insert(newUser);
 
         assertNotEquals(0,id);
-        User insertedUser = dao.getById(id);
+        User insertedUser = (User)userDao.getById(id);
         assertEquals("Fred", insertedUser.getFirstName());
         assertEquals(1, insertedUser.getFavorites().size());
     }
@@ -88,8 +79,8 @@ class UserDAOTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        userDao.delete(userDao.getById(3));
+        assertNull(userDao.getById(3));
     }
 
     /**
@@ -98,11 +89,11 @@ class UserDAOTest {
     @Test
     void updateSuccess() {
         String newLastName = "Davis";
-        User userToUpdate = dao.getById(3);
+        User userToUpdate = (User)userDao.getById(3);
         userToUpdate.setLastName(newLastName);
         logger.info("new last name: " + newLastName);
-        dao.saveOrUpdate(userToUpdate);
-        User retrievedUser = dao.getById(3);
+        userDao.saveOrUpdate(userToUpdate);
+        User retrievedUser = (User)userDao.getById(3);
         assertEquals(newLastName, retrievedUser.getLastName());
     }
 
@@ -111,7 +102,7 @@ class UserDAOTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = dao.getByPropertyEqual("lastName", "Curry");
+        List<User> users = userDao.getByPropertyEqual("lastName", "Curry");
         assertEquals(1, users.size());
         assertEquals(3, users.get(0).getId());
     }
@@ -121,7 +112,16 @@ class UserDAOTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<User> users = dao.getByPropertyLike("lastName", "c");
+        List<User> users = userDao.getByPropertyLike("lastName", "c");
+        assertEquals(3, users.size());
+    }
+
+    /**
+     * Verifies getUsersByLastName success.
+     */
+    @Test
+    void getUsersByLastNameSuccess() {
+        List<User> users = dao.getByLastName("c");
         assertEquals(3, users.size());
     }
 }
