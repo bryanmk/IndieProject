@@ -1,5 +1,7 @@
 package questie.controller;
 
+import questie.entity.Quest;
+import questie.persistence.GenericDAO;
 import questie.persistence.QuestDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -24,11 +26,12 @@ public class SearchQuest extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         QuestDAO questDao = new QuestDAO();
+        GenericDAO questGenericDao = new GenericDAO(Quest.class);
 
         if (req.getParameter("submit").equals("search")) {
             req.setAttribute("quests", questDao.getByQuestName(req.getParameter("questSearchTerm")));
         } else {
-            req.setAttribute("quests", questDao.getAll());
+            req.setAttribute("quests", questGenericDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/questSearchResults.jsp");
