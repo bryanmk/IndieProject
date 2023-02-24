@@ -18,15 +18,17 @@ class QuestDAOTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     QuestDAO dao;
+    GenericDAO questDAO;
 
     /**
      * Creating the dao.
      */
     @BeforeEach
     void setUp() {
+        dao = new QuestDAO();
+        questDAO = new GenericDAO(Quest.class);
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new QuestDAO();
     }
 
     /**
@@ -34,25 +36,16 @@ class QuestDAOTest {
      */
     @Test
     void getAllQuestsSuccess() {
-        List<Quest> quests = dao.getAll();
+        List<Quest> quests = questDAO.getAll();
         assertEquals(10, quests.size());
-    }
-
-    /**
-     * Verifies getByQuestName success.
-     */
-    @Test
-    void getByQuestNameSuccess() {
-        List<Quest> quests = dao.getByQuestName("the");
-        assertEquals(3, quests.size());
     }
 
     /**
      * Verifies a quest is returned correctly based on Id search.
      */
     @Test
-    void getByQuestIdSuccess() {
-        Quest retrievedQuest = dao.getByQuestId(3);
+    void getByIdSuccess() {
+        Quest retrievedQuest = (Quest)questDAO.getById(3);
         assertNotNull(retrievedQuest);
         assertEquals("Off To Area 52", retrievedQuest.getQuestName());
     }
@@ -64,9 +57,9 @@ class QuestDAOTest {
     void insertSuccess() {
 
         Quest newQuest = new Quest("Repeat After Me", 10, 1400, "Maldraxxus", "Signet of the Learned");
-        int id = dao.insert(newQuest);
+        int id = questDAO.insert(newQuest);
         assertNotEquals(0,id);
-        Quest insertedQuest = dao.getByQuestId(id);
+        Quest insertedQuest = (Quest)questDAO.getById(id);
         assertEquals("Repeat After Me", insertedQuest.getQuestName());
     }
 
@@ -75,8 +68,8 @@ class QuestDAOTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getByQuestId(3));
-        assertNull(dao.getByQuestId(3));
+        questDAO.delete(questDAO.getById(3));
+        assertNull(questDAO.getById(3));
     }
 
     /**
@@ -85,11 +78,11 @@ class QuestDAOTest {
     @Test
     void updateSuccess() {
         String newQuestName = "Cursed to Wither";
-        Quest questToUpdate = dao.getByQuestId(1);
+        Quest questToUpdate = (Quest)questDAO.getById(1);
         questToUpdate.setQuestName(newQuestName);
         logger.info("new quest name: " + newQuestName);
-        dao.saveOrUpdate(questToUpdate);
-        Quest retrievedQuest = dao.getByQuestId(1);
+        questDAO.saveOrUpdate(questToUpdate);
+        Quest retrievedQuest = (Quest)questDAO.getById(1);
         assertEquals(newQuestName, retrievedQuest.getQuestName());
     }
 
@@ -98,7 +91,7 @@ class QuestDAOTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Quest> quests = dao.getByPropertyEqual("questName", "A Dying World");
+        List<Quest> quests = questDAO.getByPropertyEqual("questName", "A Dying World");
         assertEquals(1, quests.size());
         assertEquals(1, quests.get(0).getQuestId());
     }
@@ -108,7 +101,16 @@ class QuestDAOTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<Quest> quests = dao.getByPropertyLike("questName", "the");
+        List<Quest> quests = questDAO.getByPropertyLike("questName", "the");
+        assertEquals(3, quests.size());
+    }
+
+    /**
+     * Verifies getByQuestName success.
+     */
+    @Test
+    void getByQuestNameSuccess() {
+        List<Quest> quests = dao.getByQuestName("the");
         assertEquals(3, quests.size());
     }
 }
