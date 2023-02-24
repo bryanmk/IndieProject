@@ -40,7 +40,7 @@ class FavoriteDAOTest {
      */
     @Test
     void getAllFavoritesSuccess() {
-        List<Favorite> favorites = (List<Favorite>)favoriteDAO.getAll();
+        List<Favorite> favorites = favoriteDAO.getAll();
         assertEquals(11, favorites.size());
     }
 

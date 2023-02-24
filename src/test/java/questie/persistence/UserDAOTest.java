@@ -21,14 +21,18 @@ class UserDAOTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
     UserDAO dao;
 
+    GenericDAO userDao;
+
     /**
      * Creating the dao.
      */
     @BeforeEach
     void setUp() {
+        dao = new UserDAO();
+        userDao = new GenericDAO(User.class);
+
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new UserDAO();
     }
 
     /**
@@ -36,7 +40,7 @@ class UserDAOTest {
      */
     @Test
     void getAllUsersSuccess() {
-        List<User> users = dao.getAll();
+        List<User> users = userDao.getAll();
         assertEquals(6, users.size());
     }
 
