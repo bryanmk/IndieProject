@@ -44,9 +44,11 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
             CLIENT_ID = properties.getProperty("client.id");
             LOGIN_URL = properties.getProperty("loginURL");
             REDIRECT_URL = properties.getProperty("redirectURL");
-        } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
-        } catch (Exception e) {
+        }
+//        catch (IOException ioException) {
+//            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+//        }
+        catch (Exception e) {
             logger.error("Error loading properties" + e.getMessage(), e);
         }
     }
