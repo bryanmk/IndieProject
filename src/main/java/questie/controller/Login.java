@@ -1,6 +1,6 @@
 package questie.controller;
 
-import questie.persistence.PropertiesLoader;
+import questie.utilities.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

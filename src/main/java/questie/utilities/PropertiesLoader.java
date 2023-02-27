@@ -1,6 +1,7 @@
-package questie.persistence;
-import java.io.*;
-import java.util.*;
+package questie.utilities;
+
+import java.io.IOException;
+import java.util.Properties;
 
 
 /**
@@ -9,7 +10,7 @@ import java.util.*;
  * @author Eric Knapp
  *
  */
-public interface PropertiesLoader{
+public interface PropertiesLoader {
 
     /**
      * This default method will load a properties file into a Properties instance
