@@ -22,4 +22,5 @@
     <!-- The next two items are to support jQuery datatables. Learn more about datatables here:https://datatables.net -->
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
     <script type="text/javascript" charset="UTF-8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <li><a href="/LogIn">Login</a></li>
 </head>
