@@ -1,8 +1,19 @@
+<%@include file="taglib.jsp"%>
 <%@include file="head.jsp"%>
 <html>
 <body>
 
 <h2>Questie Searches</h2>
+<br><br>
+<c:choose>
+    <c:when test="${empty userName}">
+        <a href = "logIn">Log in</a>
+    </c:when>
+    <c:otherwise>
+        <h3>Welcome ${userName}</h3>
+    </c:otherwise>
+</c:choose>
+<br><br>
 <form action="searchUser" class="form-inline">
     <div class="form-group">
         <label for="userSearchTerm">User Search</label>
