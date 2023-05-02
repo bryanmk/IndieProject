@@ -1,10 +1,10 @@
 <%@include file="taglib.jsp"%>
 <%@include file="head.jsp"%>
-<%@include file="header.jsp"%>
 
 <html>
 <body>
-<div class="container">
+<div class="container-fluid">
+    <%@include file="header.jsp"%>
 
     <h2>Questie Searches</h2>
     <br><br>

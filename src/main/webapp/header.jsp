@@ -1,13 +1,34 @@
-<!DOCTYPE html>
-<header class="text-center">
-    <h1>WoW Quest Helper</h1>
+<header class="text-center text-black mb-0">
+    <div class="jumbotron row">
+        <img src="images/WoWlogo.png" class="col-2" alt="WoWlogo">
+        <h1 class="col-10 align-self-center">WoW Quest Helper</h1>
+    </div>
 </header>
 
-<nav class="navbar navbar-dark bg-dark">
-    <h1 class="navbar-brand m-0 px-3">QUESTIE</h1>
-    <ul class="navbar-nav justify-content-around">
-        <li class="navbar-item"><a href="index.jsp" class="nav-link active">Home</a></li>
-        <li class="navbar-item"><a href="questSearchResults.jsp" class="nav-link">Quests</a></li>
-        <li class="navbar-item"><a href="userSearchResults.jsp" class="nav-link">Users</a></li>
-    </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <h1 class="navbar-brand m-0 px-3">Questie</h1>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse p-2" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="navbar-item"><a href="index.jsp" class="nav-link">Home</a></li>
+            <li class="navbar-item"><a href="searchQuest?questSearchTerm=&submit=viewAll" class="nav-link">Quests</a></li>
+            <li class="navbar-item"><a href="searchUser" class="nav-link">Users</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="navbar-item">
+                <a href="login.jsp" class="nav-link"><i class="bi bi-pencil-square pe-1"></i>
+                    <c:choose>
+                    <c:when test="${empty userName}">
+                        <a href = "logIn">Log in</a>
+                    </c:when>
+                    <c:otherwise>
+                        <h3>Welcome ${userName}</h3>
+                    </c:otherwise>
+                </c:choose></a>
+            </li>
+        </ul>
+    </div>
 </nav>
+

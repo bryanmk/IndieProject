@@ -1,7 +1,6 @@
 <%@include file="taglib.jsp"%>
 <c:set var="title" value="Quest Search Results" />
 <%@include file="head.jsp"%>
-<%@include file="header.jsp"%>
 
 <script type="text/javascript" class="init">
   $(document).ready( function () {
@@ -12,6 +11,7 @@
 <html><body>
 
 <div class="container-fluid">
+  <%@include file="header.jsp"%>
   <h2>Quest Search Results: </h2>
   <table id="questTable" class="display" cellspacing="0" width="100%">
     <thead>
