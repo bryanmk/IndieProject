@@ -1,7 +1,6 @@
 package service;
 
 import questie.entity.Quest;
-import quest.api.Quest;
 import questie.persistence.GenericDAO;
 import questie.persistence.QuestApiDAO;
 import org.apache.logging.log4j.LogManager;
@@ -13,8 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/QuestieService")

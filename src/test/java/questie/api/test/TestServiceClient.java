@@ -20,8 +20,8 @@ public class TestServiceClient {
         assertEquals("Sharptalon's Claw", quest.getTitle());
     }
 
-    curl --request GET \
-            --url 'https://us.api.blizzard.com/data/wow/quest/index?namespace=static-us&locale=en_US&access_token=EUvdZqoMbYkioJhUHNkvp678nJ1mvtMeZ5' \
-            --header 'Authorization: Bearer EU4C41UYVi3D1Z8M2MWEt7x5F2J3Bfu10i'
+//    curl --request GET \
+//            --url 'https://us.api.blizzard.com/data/wow/quest/index?namespace=static-us&locale=en_US&access_token=EUvdZqoMbYkioJhUHNkvp678nJ1mvtMeZ5' \
+//            --header 'Authorization: Bearer EU4C41UYVi3D1Z8M2MWEt7x5F2J3Bfu10i'
 
 }
