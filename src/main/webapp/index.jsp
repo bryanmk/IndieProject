@@ -1,7 +1,8 @@
 <%@include file="taglib.jsp"%>
 <%@include file="head.jsp"%>
-<%@include file="header.jsp"%>
+
 <html>
+<%@include file="header.jsp"%>
 <body>
 <div class="container">
 
