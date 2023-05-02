@@ -120,6 +120,12 @@
       <artifactId>jersey-container-servlet</artifactId>
       <version>${jersey-version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap</artifactId>
+      <version>5.0.2</version>
+    </dependency>
 
     <!-- for parsing access token -->
     <!-- TODO add versions to properties element rather than hard-coding -->
