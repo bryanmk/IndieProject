@@ -28,11 +28,13 @@ public class SearchQuest extends HttpServlet {
         QuestDAO questDao = new QuestDAO();
         GenericDAO questGenericDao = new GenericDAO(Quest.class);
 
-        if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("quests", questDao.getByQuestName(req.getParameter("questSearchTerm")));
-        } else {
-            req.setAttribute("quests", questGenericDao.getAll());
-        }
+//        if (req.getParameter("submit").equals("search")) {
+//            req.setAttribute("quests", questDao.getByQuestName(req.getParameter("questSearchTerm")));
+//        } else {
+//            req.setAttribute("quests", questGenericDao.getAll());
+//        }
+
+        req.setAttribute("quests", questGenericDao.getAll());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/questSearchResults.jsp");
         dispatcher.forward(req, resp);

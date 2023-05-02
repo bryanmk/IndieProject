@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse p-2" id="navbarNav">
         <ul class="navbar-nav">
             <li class="navbar-item"><a href="index.jsp" class="nav-link">Home</a></li>
-            <li class="navbar-item"><a href="searchQuest?questSearchTerm=&submit=viewAll" class="nav-link">Quests</a></li>
+            <li class="navbar-item"><a href="searchQuest" class="nav-link">Quests</a></li>
             <li class="navbar-item"><a href="searchUser" class="nav-link">Users</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
