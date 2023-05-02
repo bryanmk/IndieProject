@@ -11,7 +11,7 @@
 
 <html><body>
 
-<div class="container-fluid">
+<div class="container-fluid bg-light">
     <h2>Quest Search Results: </h2>
     <table id="questTable" class="display" cellspacing="0" width="100%">
         <thead>

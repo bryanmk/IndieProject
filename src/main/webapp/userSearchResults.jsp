@@ -11,7 +11,7 @@
 <html><body>
 
 
-<div class="container-fluid">
+<div class="container-fluid bg-light">
     <%@include file="header.jsp"%>
     <h2>Search Results: </h2>
     <table id="userTable" class="display" cellspacing="0" width="100%">

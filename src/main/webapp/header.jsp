@@ -21,10 +21,10 @@
                 <a href="login.jsp" class="nav-link"><i class="bi bi-pencil-square pe-1"></i>
                     <c:choose>
                     <c:when test="${empty userName}">
-                        <a href = "logIn">Log in</a>
+                        <a href = "logIn" class="navbar-link">Log in</a>
                     </c:when>
                     <c:otherwise>
-                        <h3>Welcome ${userName}</h3>
+                        <h4 class="navbar-item">Welcome ${userName}</h4>
                     </c:otherwise>
                 </c:choose></a>
             </li>

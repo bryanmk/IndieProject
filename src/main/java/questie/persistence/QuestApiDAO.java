@@ -21,7 +21,7 @@ public class QuestApiDAO {
 
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("https://us.api.blizzard.com/data/wow/quest/2?namespace=static-us&locale=en_US&access_token=EUvdZqoMbYkioJhUHNkvp678nJ1mvtMeZ5");
+                client.target("https://us.api.blizzard.com/data/wow/quest/2?namespace=static-us&locale=en_US&access_token=EUuasfNuNTj8TxJNv32viSUUovPMv3BGaJ");
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         Quest quest = null;
