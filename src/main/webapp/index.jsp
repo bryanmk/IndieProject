@@ -43,6 +43,25 @@
             <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View all quests</button>
         </form>
     </div>
+
+    <div class="row">
+        <div class="col-sm-6 daily text-center">
+            <form action="../data/quest/getById">
+                <h2 class="text-uppercase text-center text-bold display-1">Get a quest by Id</h2>
+                <div class="form-group mx-sm-3 mb-2 text-center">
+                    <label for="id" class="sr-only">Date</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                           aria-describedby="getById">
+                </div>
+                <button type="submit" id="submit" class="btn btn-primary mb-2">Submit Id</button>
+            </form>
+
+        </div>
+        <div class="col-sm-6 mx-auto all-time text-center">
+            <h2 class="text-uppercase text-bold display-1">Get every quest ever</h2>
+            <a class="btn bg-primary" href="../data/quest/all" target="_blank">All the Quests!</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
