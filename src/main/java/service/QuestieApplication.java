@@ -8,13 +8,13 @@ import java.util.Set;
 /**
  * Defines the base URI for all resource URIs (where the APIs are located
  */
-@ApplicationPath("/getQuest")
+@ApplicationPath("/data")
 
 /**
  * Declares the root resource and provider classes
  */
 public class QuestieApplication extends Application {
-    public Set<Class<?>> getQuest() {
+    public Set<Class<?>> getQuests() {
         HashSet h = new HashSet<Class<?>>();
         h.add(QuestieService.class);
         return h;

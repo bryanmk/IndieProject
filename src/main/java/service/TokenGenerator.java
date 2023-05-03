@@ -142,7 +142,8 @@ public class TokenGenerator {
 
     public static void main(String [] args) {
 
-        final String namespace = "static-classic-us";
+//        final String namespace = "static-classic-us";
+        final String namespace = "static-us";
 
         final String locale = "en_US";
 
@@ -151,7 +152,8 @@ public class TokenGenerator {
         final String [] testPaths = {
                 "/data/wow/item-class/index",
                 "/data/wow/media/item/19019",
-                "/data/wow/creature/30"
+                "/data/wow/creature/30",
+                "/data/wow/quest/2"
         };
 
         try {

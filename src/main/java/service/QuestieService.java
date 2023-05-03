@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/QuestieService")
+@Path("/quest")
 public class QuestieService {
     private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDAO genericDao = new GenericDAO(Quest.class);
@@ -23,13 +23,11 @@ public class QuestieService {
     @GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllWords() {
-        List<Quest> wordList = genericDao.getAll();
-        return Response.status(200).entity(wordList.toString()).build();
+    public Response getAllQuests() {
+        List<Quest> questList = genericDao.getAll();
+        return Response.status(200).entity(questList.toString()).build();
     }
 
-
-    //    GET /WorldService/query?word_id={id}
     @GET
     @Path("/getById")
     @Produces(MediaType.APPLICATION_JSON)
