@@ -1,3 +1,5 @@
+package questie.api.test;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import quest.api.Quest;
