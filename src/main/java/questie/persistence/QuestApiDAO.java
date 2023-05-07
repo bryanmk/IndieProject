@@ -51,7 +51,8 @@ public class QuestApiDAO implements PropertiesLoader {
 
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target(BASE_URL + TEST_PATH +"?namespace=" + NAMESPACE + "&locale=" + LOCALE + "&access_token=" + token.getString("access_token"));
+//                client.target(BASE_URL + TEST_PATH +"?namespace=" + NAMESPACE + "&locale=" + LOCALE + "&access_token=" + token.getString("access_token"));
+                client.target("https://us.api.blizzard.com/data/wow/quest/2?namespace=static-us&locale=en_US&access_token="  + token.getString("access_token"));
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         Quest quest = null;
@@ -59,6 +60,24 @@ public class QuestApiDAO implements PropertiesLoader {
             quest = mapper.readValue(response, Quest.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
+        }
+        return quest;
+    }
+
+    public Quest getAnswer(Integer number) throws IOException {
+
+        JSONObject token = tokenGenerator.getToken();
+
+        Client client = ClientBuilder.newClient();
+        WebTarget target =
+                client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token="  + token.getString("access_token"));
+        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        Quest quest = null;
+        try {
+            quest = mapper.readValue(response, Quest.class);
+        } catch (JsonProcessingException e) {
+            logger.error("Error processing JSON... " + e);
         }
         return quest;
     }

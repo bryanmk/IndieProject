@@ -3,12 +3,14 @@ package quest.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity(name = "QuestApi")
-@Table(name = "Quest")
+@Entity(name = "Quest")
+@Table(name = "quest_api")
 public class Quest{
 
 	@JsonProperty("area")
@@ -23,9 +25,11 @@ public class Quest{
 	@JsonProperty("description")
 	private String description;
 
+	@Id
 	@JsonProperty("id")
 	private int id;
 
+	@Column (name = "title_api")
 	@JsonProperty("title")
 	private String title;
 
