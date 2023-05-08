@@ -61,67 +61,73 @@ public class Quests {
          * Just to test, it worked.
          */
         List<Integer> numbers = new ArrayList<>();
-//        numbers.add(1);
-        numbers.add(2);
-//        numbers.add(315);
-//        numbers.add(384);
-//        numbers.add(412);
-//        numbers.add(432);
-//        numbers.add(433);
-//        numbers.add(6387);
-//        numbers.add(6388);
-//        numbers.add(6391);
-//        numbers.add(6392);
-//        numbers.add(25199);
-//        numbers.add(25212);
-//        numbers.add(25229);
-//        numbers.add(25283);
-//        numbers.add(25285);
-//        numbers.add(25286);
-//        numbers.add(25287);
-//        numbers.add(25289);
-//        numbers.add(25295);
-//        numbers.add(25393);
-//        numbers.add(25500);
-//        numbers.add(25667);
-//        numbers.add(25668);
-//        numbers.add(25724);
-//        numbers.add(25792);
-//        numbers.add(25838);
-//        numbers.add(25839);
-//        numbers.add(25840);
-//        numbers.add(25841);
-//        numbers.add(25882);
-//        numbers.add(25905);
-//        numbers.add(25932);
-//        numbers.add(25933);
-//        numbers.add(25937);
-//        numbers.add(25978);
-//        numbers.add(25979);
-
-
-
-//        numbers.add(25986);
-//        numbers.add(25997);
-//        numbers.add(25998);
-//        numbers.add(26078);
-//        numbers.add(26085);
-//        numbers.add(26094);
-//        numbers.add(26102);
-
-
-
-//        numbers.add(26112);
-//        numbers.add(26380);
-//        numbers.add(28868);
-
-
-        //THESE HAVE THE NULL POINTER
-//        numbers.add(43283);
-//        numbers.add(43284);
-//        numbers.add(43291);
-//        numbers.add(43292);
-//        numbers.add(47709);
+        numbers.add(27693);
+        numbers.add(27709);
+        numbers.add(27713);
+        numbers.add(27714);
+        numbers.add(27715);
+        numbers.add(27762);
+        numbers.add(27763);
+        numbers.add(27764);
+        numbers.add(27765);
+        numbers.add(27766);
+        numbers.add(27769);
+        numbers.add(27770);
+        numbers.add(27771);
+        numbers.add(27772);
+        numbers.add(27774);
+        numbers.add(27775);
+        numbers.add(27776);
+        numbers.add(27789);
+        numbers.add(27791);
+        numbers.add(27792);
+        numbers.add(27793);
+        numbers.add(27794);
+        numbers.add(27796);
+        numbers.add(27797);
+        numbers.add(27823);
+        numbers.add(27824);
+        numbers.add(27825);
+        numbers.add(27826);
+        numbers.add(27827);
+        numbers.add(27828);
+        numbers.add(27829);
+        numbers.add(27830);
+        numbers.add(27831);
+        numbers.add(27832);
+        numbers.add(27833);
+        numbers.add(27834);
+        numbers.add(27835);
+        numbers.add(27858);
+        numbers.add(27859);
+        numbers.add(27877);
+        numbers.add(27878);
+        numbers.add(27879);
+        numbers.add(27880);
+        numbers.add(27881);
+        numbers.add(27882);
+        numbers.add(27883);
+        numbers.add(27884);
+        numbers.add(27885);
+        numbers.add(27886);
+        numbers.add(27887);
+        numbers.add(27888);
+        numbers.add(27889);
+        numbers.add(27890);
+        numbers.add(27891);
+        numbers.add(27892);
+        numbers.add(27893);
+        numbers.add(27894);
+        numbers.add(27895);
+        numbers.add(27896);
+        numbers.add(27897);
+        numbers.add(27898);
+        numbers.add(27912);
+        numbers.add(27913);
+        numbers.add(27927);
+        numbers.add(27930);
+        numbers.add(28579);
+        numbers.add(28580);
         return numbers;
 
 
@@ -151,35 +157,6 @@ public class Quests {
         }
         return questsAPI;
 
-//        for (int i = 0; i < quests.size(); i++) {
-//            try {
-//                Client client = ClientBuilder.newClient();
-//                WebTarget target =
-//                        client.target("https://us.api.blizzard.com/data/wow/quest/" + i + "?namespace=static-us&locale=en_US&access_token=EUozqdnv06l32nuRreTP125XJK6kqCRMes");
-//                String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
-//                ObjectMapper mapper = new ObjectMapper();
-//                Quest quest = null;
-//                try {
-//                    quest = mapper.readValue(response, Quest.class);
-//                } catch (JsonProcessingException ignore) {
-//                    System.out.println("Error processing JSON... " + ignore);
-//                }
-////                return quest;
-//            } catch (Exception e) {
-//                System.out.println(e);
-//            }
-//            questsAPI.add
-//                    ("('" + String.valueOf(
-//                            dao.getAnswer((quests.get(i))).getId() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getTitle() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
-//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
-//        }
-//        return questsAPI;
     }
 
     /**
