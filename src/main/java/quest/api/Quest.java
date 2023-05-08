@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Quest{
 
@@ -23,6 +24,7 @@ public class Quest{
 	@JsonProperty("description")
 	private String description;
 
+	@Id
 	@JsonProperty("id")
 	private int id;
 

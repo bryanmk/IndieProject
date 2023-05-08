@@ -17,18 +17,24 @@
         <thead>
         <th>ID</th>
         <th>Title</th>
-<%--        <th>Area</th>--%>
-<%--        <th>Description</th>--%>
-<%--        <th>Requirements</th>--%>
+        <th>Level Requirement</th>
+        <th>Area</th>
+        <th>Experience</th>
+        <th>Gold</th>
+        <th>Silver</th>
+        <th>Copper</th>
         </thead>
         <tbody>
         <c:forEach var="quest" items="${quests}">
             <tr>
                 <td>${quest.id}</td>
                 <td>${quest.title}</td>
-<%--                <td>${quest.area}</td>--%>
-<%--                <td>${quest.description}</td>--%>
-<%--                <td>${quest.requirements}</td>--%>
+                <td>${quest.levelRequirement}</td>
+                <td>${quest.area}</td>
+                <td>${quest.experience}</td>
+                <td>${quest.gold}</td>
+                <td>${quest.silver}</td>
+                <td>${quest.copper}</td>
             </tr>
         </c:forEach>
         </tbody>

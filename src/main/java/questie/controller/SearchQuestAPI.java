@@ -1,6 +1,6 @@
 package questie.controller;
 
-import quest.api.Quest;
+import questie.entity.QuestAPI;
 import questie.persistence.GenericDAO;
 import questie.persistence.QuestApiDAO;
 
@@ -27,7 +27,7 @@ public class SearchQuestAPI extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         QuestApiDAO questApiDao = new QuestApiDAO();
-        GenericDAO questGenericDao = new GenericDAO(Quest.class);
+        GenericDAO questGenericDao = new GenericDAO(QuestAPI.class);
 
 //        if (req.getParameter("submit").equals("search")) {
 //            req.setAttribute("quests", questApiDao.getAnswer(Integer.valueOf(req.getParameter("questApiSearchTerm"))));

@@ -1,13 +1,10 @@
 package questie.persistence;
 
-import questie.entity.Quest;
-import quest.api.QuestAPI;
+import questie.entity.QuestAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import questie.entity.User;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
