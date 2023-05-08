@@ -18,11 +18,12 @@
         <property name="hibernate.c3p0.timeout">300</property>
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
-        <mapping class="questie.entity.User"/>
-        <mapping class="questie.entity.Quest"/>
-        <mapping class="questie.entity.Favorite"/>
-        <mapping class="questie.entity.FavoriteQuest"/>
+<!--        <mapping class="questie.entity.User"/>-->
+<!--        <mapping class="questie.entity.Quest"/>-->
+<!--        <mapping class="questie.entity.Favorite"/>-->
+<!--        <mapping class="questie.entity.FavoriteQuest"/>-->
 
-        <mapping class="quest.api.Quest"/>
+        <mapping class="quest.api.QuestAPI"/>
+
     </session-factory>
 </hibernate-configuration>

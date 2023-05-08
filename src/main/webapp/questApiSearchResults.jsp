@@ -18,7 +18,7 @@
         <th>ID</th>
         <th>Title</th>
 <%--        <th>Area</th>--%>
-        <th>Description</th>
+<%--        <th>Description</th>--%>
 <%--        <th>Requirements</th>--%>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                 <td>${quest.id}</td>
                 <td>${quest.title}</td>
 <%--                <td>${quest.area}</td>--%>
-                <td>${quest.description}</td>
+<%--                <td>${quest.description}</td>--%>
 <%--                <td>${quest.requirements}</td>--%>
             </tr>
         </c:forEach>

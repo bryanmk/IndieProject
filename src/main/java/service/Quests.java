@@ -62,7 +62,7 @@ public class Quests {
          */
         List<Integer> numbers = new ArrayList<>();
 //        numbers.add(1);
-//        numbers.add(2);
+        numbers.add(2);
 //        numbers.add(315);
 //        numbers.add(384);
 //        numbers.add(412);
@@ -116,13 +116,12 @@ public class Quests {
 //        numbers.add(28868);
 
 
-        //THIS ONE HAS THE NULL POINTER
-        numbers.add(43283);
-        numbers.add(43284);
-        numbers.add(43291);
-
-        numbers.add(43292);
-        numbers.add(47709);
+        //THESE HAVE THE NULL POINTER
+//        numbers.add(43283);
+//        numbers.add(43284);
+//        numbers.add(43291);
+//        numbers.add(43292);
+//        numbers.add(47709);
         return numbers;
 
 
@@ -145,11 +144,10 @@ public class Quests {
                         dao.getAnswer((quests.get(i))).getTitle() + "', '" +
                         dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
                         dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
-                        dao.getAnswer((quests.get(i))).getRewards().getExperience())+ "')");
-//                            + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
+                        dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
         }
         return questsAPI;
 

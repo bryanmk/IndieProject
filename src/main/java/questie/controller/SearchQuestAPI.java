@@ -30,7 +30,7 @@ public class SearchQuestAPI extends HttpServlet {
         GenericDAO questGenericDao = new GenericDAO(Quest.class);
 
         if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("quests", questApiDao.getByQuestTitle(req.getParameter("questApiSearchTerm")));
+            req.setAttribute("quests", questApiDao.getAnswer(Integer.valueOf(req.getParameter("questApiSearchTerm"))));
         } else {
             req.setAttribute("quests", questGenericDao.getAll());
         }
