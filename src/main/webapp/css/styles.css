@@ -4,3 +4,7 @@ header {
 body {
     background-color: #00008B;
 }
+.card-header {
+    font-family: fantasy;
+    background-color: #00008B;
+}
