@@ -15,7 +15,7 @@ public class QuestAPI {
     @Column
     private String title;
 
-    @Column
+    @Column (name = "level_requirement")
     private int levelRequirement;
 
     @Column

@@ -1,6 +1,7 @@
 package questie.persistence;
 
 import questie.entity.Quest;
+import quest.api.QuestAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -24,18 +25,18 @@ public class QuestDAO {
      * Gets quests by quest name
      * @return quests by quest name
      */
-    public List<Quest> getByQuestName(String questName) {
+    public List<QuestAPI> getByQuestName(String questName) {
 
         logger.debug("Searching for: {}", questName );
 
         Session session = sessionFactory.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Quest> query = builder.createQuery(Quest.class);
-        Root<Quest> root = query.from(Quest.class);
-        Expression<String> propertyPath = root.get("questName");
+        CriteriaQuery<QuestAPI> query = builder.createQuery(QuestAPI.class);
+        Root<QuestAPI> root = query.from(QuestAPI.class);
+        Expression<String> propertyPath = root.get("title");
         query.where(builder.like(propertyPath, "%" + questName + "%"));
-        List<Quest> quests = session.createQuery(query).getResultList();
+        List<QuestAPI> quests = session.createQuery(query).getResultList();
         session.close();
         return quests;
     }

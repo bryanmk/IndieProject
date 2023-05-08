@@ -2,6 +2,7 @@ package questie.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import quest.api.Quest;
+import quest.api.QuestAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

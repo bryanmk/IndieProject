@@ -15,6 +15,7 @@
             <li class="navbar-item"><a href="index.jsp" class="nav-link">Home</a></li>
             <li class="navbar-item"><a href="searchQuest" class="nav-link">Quests</a></li>
             <li class="navbar-item"><a href="searchUser" class="nav-link">Users</a></li>
+            <li class="navbar-item"><a href="searchQuestAPI" class="nav-link">QuestsAPI</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="navbar-item">
