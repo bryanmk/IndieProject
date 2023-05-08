@@ -5,6 +5,7 @@ import quest.api.Quest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,6 +51,7 @@ public class QuestApiDAO implements PropertiesLoader {
         JSONObject token = tokenGenerator.getToken();
 
         Client client = ClientBuilder.newClient();
+
         WebTarget target =
 //                client.target(BASE_URL + TEST_PATH +"?namespace=" + NAMESPACE + "&locale=" + LOCALE + "&access_token=" + token.getString("access_token"));
                 client.target("https://us.api.blizzard.com/data/wow/quest/2?namespace=static-us&locale=en_US&access_token="  + token.getString("access_token"));
@@ -64,20 +66,19 @@ public class QuestApiDAO implements PropertiesLoader {
         return quest;
     }
 
-    public Quest getAnswer(Integer number) throws IOException {
+    public Quest getAnswer(Integer number){
 
-        JSONObject token = tokenGenerator.getToken();
-
+//        JSONObject token = tokenGenerator.getToken();
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token="  + token.getString("access_token"));
+                client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token=EUozqdnv06l32nuRreTP125XJK6kqCRMes");
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         Quest quest = null;
         try {
             quest = mapper.readValue(response, Quest.class);
-        } catch (JsonProcessingException e) {
-            logger.error("Error processing JSON... " + e);
+        } catch (JsonProcessingException ignore) {
+            logger.error("Error processing JSON... " + ignore);
         }
         return quest;
     }

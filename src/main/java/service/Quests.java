@@ -1,8 +1,15 @@
 package service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import quest.api.Quest;
 import questie.persistence.GenericDAO;
 import questie.persistence.QuestApiDAO;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -54,8 +61,8 @@ public class Quests {
          * Just to test, it worked.
          */
         List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-//        numbers.add(314);
+//        numbers.add(1);
+//        numbers.add(2);
 //        numbers.add(315);
 //        numbers.add(384);
 //        numbers.add(412);
@@ -91,6 +98,9 @@ public class Quests {
 //        numbers.add(25937);
 //        numbers.add(25978);
 //        numbers.add(25979);
+
+
+
 //        numbers.add(25986);
 //        numbers.add(25997);
 //        numbers.add(25998);
@@ -98,14 +108,21 @@ public class Quests {
 //        numbers.add(26085);
 //        numbers.add(26094);
 //        numbers.add(26102);
+
+
+
 //        numbers.add(26112);
 //        numbers.add(26380);
 //        numbers.add(28868);
-//        numbers.add(43283);
-//        numbers.add(43284);
-//        numbers.add(43291);
-//        numbers.add(43292);
-//        numbers.add(47709);
+
+
+        //THIS ONE HAS THE NULL POINTER
+        numbers.add(43283);
+        numbers.add(43284);
+        numbers.add(43291);
+
+        numbers.add(43292);
+        numbers.add(47709);
         return numbers;
 
 
@@ -128,12 +145,43 @@ public class Quests {
                         dao.getAnswer((quests.get(i))).getTitle() + "', '" +
                         dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
                         dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
-                        dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
-                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
-                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
-                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
+                        dao.getAnswer((quests.get(i))).getRewards().getExperience())+ "')");
+//                            + "', '" +
+//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
+//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
+//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
         }
         return questsAPI;
+
+//        for (int i = 0; i < quests.size(); i++) {
+//            try {
+//                Client client = ClientBuilder.newClient();
+//                WebTarget target =
+//                        client.target("https://us.api.blizzard.com/data/wow/quest/" + i + "?namespace=static-us&locale=en_US&access_token=EUozqdnv06l32nuRreTP125XJK6kqCRMes");
+//                String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+//                ObjectMapper mapper = new ObjectMapper();
+//                Quest quest = null;
+//                try {
+//                    quest = mapper.readValue(response, Quest.class);
+//                } catch (JsonProcessingException ignore) {
+//                    System.out.println("Error processing JSON... " + ignore);
+//                }
+////                return quest;
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//            questsAPI.add
+//                    ("('" + String.valueOf(
+//                            dao.getAnswer((quests.get(i))).getId() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getTitle() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
+//                                    dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
+//        }
+//        return questsAPI;
     }
 
     /**
