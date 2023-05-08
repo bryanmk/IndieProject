@@ -18,11 +18,10 @@
             <li class="navbar-item"><a href="searchQuestAPI" class="nav-link">QuestsAPI</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
-            <li class="navbar-item">
-                <a href="login.jsp" class="nav-link"><i class="bi bi-pencil-square pe-1"></i>
+            <li class="navbar-item align-self-center">
                     <c:choose>
                     <c:when test="${empty userName}">
-                        <a href = "logIn" class="navbar-link">Log in</a>
+                        <a href = "logIn" class="navbar-link text-decoration-none"><i class="bi bi-pencil-square pe-1"></i>Log in</a>
                     </c:when>
                     <c:otherwise>
                         <h4 class="navbar-item">Welcome ${userName}</h4>
