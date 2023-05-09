@@ -61,65 +61,63 @@ public class Quests {
          * Just to test, it worked.
          */
         List<Integer> numbers = new ArrayList<>();
-//        numbers.add(25674);
-//        numbers.add(25675);
-//        numbers.add(25676);
-//        numbers.add(25677);
-//        numbers.add(25678);
-//        numbers.add(25679);
-//        numbers.add(25680);
-//        numbers.add(25681);
-//        numbers.add(25682);
-//        numbers.add(25683);
-//        numbers.add(25684);
-//        numbers.add(25685);
-//        numbers.add(25686);
-//        numbers.add(25687);
-//        numbers.add(25688);
-//        numbers.add(25689);
-//        numbers.add(25690);
-//        numbers.add(25691);
-//        numbers.add(25692);
-//        numbers.add(25693);
-//        numbers.add(25694);
-//        numbers.add(25695);
-//        numbers.add(25696);
-//        numbers.add(25697);
-//        numbers.add(25698);
-//        numbers.add(25699);
-//        numbers.add(25700);
-//        numbers.add(25701);
-//        numbers.add(25702);
-//        numbers.add(25703);
-//        numbers.add(25705);
-//        numbers.add(25706);
-//        numbers.add(25707);
-//        numbers.add(25708);
-//        numbers.add(25709);
-//        numbers.add(25710);
-//        numbers.add(25711);
-//        numbers.add(25712);
-//        numbers.add(25713);
-//        numbers.add(25714);
-//        numbers.add(25715);
-//        numbers.add(25716);
-//        numbers.add(25717);
+        numbers.add(25235);
+        numbers.add(26618);
+        numbers.add(26620);
+        numbers.add(26623);
+        numbers.add(26627);
+        numbers.add(26645);
+        numbers.add(26652);
+        numbers.add(26653);
+        numbers.add(26654);
+        numbers.add(26655);
+        numbers.add(26660);
+        numbers.add(26661);
+        numbers.add(26666);
+        numbers.add(26667);
+        numbers.add(26669);
+        numbers.add(26670);
+        numbers.add(26671);
+        numbers.add(26672);
+        numbers.add(26674);
+        numbers.add(26676);
+        numbers.add(26677);
+        numbers.add(26680);
+        numbers.add(26681);
+        numbers.add(26683);
+        numbers.add(26684);
+        numbers.add(26685);
+        numbers.add(26686);
+        numbers.add(26688);
+        numbers.add(26689);
+        numbers.add(26690);
+        numbers.add(26691);
+        numbers.add(26707);
+        numbers.add(26717);
+        numbers.add(26719);
+        numbers.add(26720);
+        numbers.add(26721);
+        numbers.add(26722);
+        numbers.add(26723);
+        numbers.add(26724);
+        numbers.add(26725);
+        numbers.add(26727);
+        numbers.add(26728);
+        numbers.add(26753);
+        numbers.add(26754);
+        numbers.add(26760);
+        numbers.add(26777);
+        numbers.add(26778);
+        numbers.add(26785);
+        numbers.add(26787);
+        numbers.add(26793);
+        numbers.add(26794);
+        numbers.add(26795);
+        numbers.add(26796);
+        numbers.add(26797);
+        numbers.add(28564);
 
 
-//        numbers.add(25718);
-//        numbers.add(25719);
-//        numbers.add(25720);
-        numbers.add(25771);
-        numbers.add(25772);
-
-
-//        numbers.add(26157);
-//        numbers.add(26158);
-//        numbers.add(26159);
-//        numbers.add(26160);
-//        numbers.add(26161);
-//        numbers.add(26162);
-//        numbers.add(26163);
 //        numbers.add(26164);
 //        numbers.add(26165);
 //        numbers.add(26166);
@@ -192,22 +190,23 @@ public class Quests {
         List<String> questsAPI = new ArrayList<>();
         for (int i = 0; i < quests.size(); i++) {
             questsAPI.add
-//                    ("('" + String.valueOf(
-//                    dao.getAnswer((quests.get(i))).getId() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getTitle() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
-//                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
-
-            ("('" + String.valueOf(
+                    ("('" + String.valueOf(
                     dao.getAnswer((quests.get(i))).getId() + "', '" +
-                            dao.getAnswer((quests.get(i))).getTitle() + "', '" +
-                            dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
-                            dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
-                            dao.getAnswer((quests.get(i))).getRewards().getExperience()) + "')" );
+                        dao.getAnswer((quests.get(i))).getTitle() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
+                        dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getExperience() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getGold() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getSilver() + "', '" +
+                        dao.getAnswer((quests.get(i))).getRewards().getMoney().getUnits().getCopper())+ "')");
+
+            // USE WHEN QUEST HAS NULL POINTER FOR GOLD/SILVER/COPPER
+//            ("('" + String.valueOf(
+//                    dao.getAnswer((quests.get(i))).getId() + "', '" +
+//                            dao.getAnswer((quests.get(i))).getTitle() + "', '" +
+//                            dao.getAnswer((quests.get(i))).getRequirements().getMinCharacterLevel() + "', '" +
+//                            dao.getAnswer((quests.get(i))).getArea().getName() + "', '" +
+//                            dao.getAnswer((quests.get(i))).getRewards().getExperience()) + "')" );
         }
         return questsAPI;
 
