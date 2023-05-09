@@ -625,3 +625,5 @@ INSERT INTO quest_api VALUES ('1168', 'Army of the Black Dragon', '15', 'Dustwal
                             ('27430', 'Justice for the Hyals', '15', 'Dustwallow Marsh', '2050', '0', '1', '50'),
                             ('28552', 'Heros Call: Dustwallow Marsh!', '15', 'Dustwallow Marsh', '525', '1', '5', '0'),
                             ('28554', 'Warchiefs Command: Dustwallow Marsh!', '15', 'Dustwallow Marsh', '525', '1', '5', '0');
+
+AZSHARA (16)

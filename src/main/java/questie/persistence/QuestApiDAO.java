@@ -67,6 +67,12 @@ public class QuestApiDAO implements PropertiesLoader {
         return quest;
     }
 
+    /**
+     * Retrieves new access token from tokenGenerator and uses it to make a call to Battlenet API
+     * @param number integer value to insert that corresponds to quest{id}
+     * @return Quest POJO
+     * @throws IOException
+     */
     public Quest getAnswer(Integer number) throws IOException {
 
         JSONObject token = tokenGenerator.getToken();

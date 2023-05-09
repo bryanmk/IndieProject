@@ -1,1 +1,1 @@
-('1271', 'Feast at the Blue Recluse', '15', 'Dustwallow Marsh', '0', '0', '0', '0')
+('1168', 'Army of the Black Dragon', '15', 'Dustwallow Marsh', '4100', '0', '2', '70')

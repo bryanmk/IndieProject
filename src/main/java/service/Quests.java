@@ -1,21 +1,11 @@
 package service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import quest.api.Quest;
-import questie.persistence.GenericDAO;
 import questie.persistence.QuestApiDAO;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import java.io.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 public class Quests {
     private int id;
@@ -45,21 +35,12 @@ public class Quests {
     }
 
     /**
-     * produces a collection of dates in a range
+     * produces a List of integers corresponding to quest{id} endpoints
      * @return  a List of integers
-     * https://www.baeldung.com/java-between-dates
      */
     public static List<Integer> getQuests() {
-//        List<LocalDate> dateList = start.datesUntil(end).collect(Collectors.toList());
-//        List<String> strList = new ArrayList<>();
-//        for (int i = 0; i < dateList.size(); i++) {
-//            strList.add(String.valueOf(dateList.get(i)));
-//        }
-//        return strList;
 
-        /**
-         * Just to test, it worked.
-         */
+        //For manually entering quest{id} endpoints
         List<Integer> numbers = new ArrayList<>();
 //        numbers.add(1168);
 //        numbers.add(1201);
@@ -181,15 +162,15 @@ public class Quests {
 
         return numbers;
 
-
+        //For entering a start value and end value for corresponding quest{id} values if they are sequential
 //        List<Integer> range = IntStream.rangeClosed(start, end)
 //                .boxed().collect(Collectors.toList());
 //        return range;
     }
 
     /**
-     * Retrieves the NYTimes API information (wordleDAO) with the dates information
-     * @param quests -- String List of dates to search words for
+     * Retrieves BattleNet API information (QuestApiDAO) with relevant information to fill the table in the database
+     * @param quests -- list of integers that correspond to quest{id} endpoints
      * @return -- List<String> with correct INSERT values for a SQL statement
      */
     public static List<String> queryValues (List<Integer> quests) throws IOException {
@@ -221,7 +202,7 @@ public class Quests {
     /**
      * Takes a String list and produces a .txt file
      * @param list the list
-     * @throws IOException the io exception
+     * @throws IOException io exception
      */
     public static void toFile (List<String> list) throws IOException {
         File file = new File("src/main/resources/InsertValues.txt");
