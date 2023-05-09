@@ -6,7 +6,6 @@ import quest.api.Quest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,9 +46,14 @@ public class QuestApiDAO implements PropertiesLoader {
      * Gets quests by quest name
      * @return quests by quest name
      */
-    public Quest getByQuestTitle(String questTitle) throws IOException {
+    public Quest getByQuestTitle(String questTitle) {
 
-        JSONObject token = tokenGenerator.getToken();
+        JSONObject token = null;
+        try {
+            token = tokenGenerator.getToken();
+        } catch (IOException e) {
+            logger.error("RuntimeException" + (e));
+        }
 
         Client client = ClientBuilder.newClient();
 
@@ -62,7 +66,7 @@ public class QuestApiDAO implements PropertiesLoader {
         try {
             quest = mapper.readValue(response, Quest.class);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            logger.error("RuntimeException" + e);
         }
         return quest;
     }
@@ -73,9 +77,14 @@ public class QuestApiDAO implements PropertiesLoader {
      * @return Quest POJO
      * @throws IOException
      */
-    public Quest getAnswer(Integer number) throws IOException {
+    public Quest getAnswer(Integer number) {
 
-        JSONObject token = tokenGenerator.getToken();
+        JSONObject token = null;
+        try {
+            token = tokenGenerator.getToken();
+        } catch (IOException e) {
+            logger.error("RuntimeException" + e);
+        }
         Client client = ClientBuilder.newClient();
         WebTarget target =
                 client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token=" + token.getString("access_token"));
@@ -84,8 +93,8 @@ public class QuestApiDAO implements PropertiesLoader {
         Quest quest = null;
         try {
             quest = mapper.readValue(response, Quest.class);
-        } catch (JsonProcessingException ignore) {
-            logger.error("Error processing JSON... " + ignore);
+        } catch (JsonProcessingException e) {
+            logger.error("Error processing JSON... " + e);
         }
         return quest;
     }
