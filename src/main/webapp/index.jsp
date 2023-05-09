@@ -10,10 +10,36 @@
                 <article class="card px-0 mb-3 col-md-3">
                     <h2 class="card-header bg-dark text-light text-center">99 Problems</h2>
                     <div class="card-body">
-                        <p>
+                        <p class="card-text">
                             In WoW classic you receive an immense amount of quests with nothing but a vague description to go on.
                             It can take eons to figure out where you need to go and specifically what you need to do in order to complete quests.
+
+                            The purpose of this application is to make life for an old school gamer just a little bit easier.
+
+
+                            As it currently stands, this site essentially serves as a large database with quests and some useful
+                            information about them. In the future I have plans to do a number of things to continue to make things
+                            in the realm easier and easier.
                         </p>
+                        <ul class="card-text list-unstyled text-center">
+                            <li class="fw-bold">Make this map to the left interactive </li>
+                            <p>
+                                I'd like to be able to click on a continent, which then zooms in, so you can view all areas.
+                                From there you can select an area, and it will take you to the database filtered to view quests in that area.
+                            </p>
+                            <li class="fw-bold">Add a user profile page</li>
+                            <p>
+                                Here you can save things like completed quests, favorite quests, as
+                                well as have a little bit of "what if" functionality. How much gold will I get if I complete
+                                quests X, Y, and Z?
+                            </p>
+                            <li class="fw-bold">Add links to each quest</li>
+                            <p>
+                                Each quest will have its own page that contains a map with highlighted indicators of
+                                where to start the quest and where to hand it in once you're finished, as well as have a
+                                description of how to complete the quest and what you get for doing so.
+                            </p>
+                        </ul>
                     </div>
                 </article>
                 <article class="card">
@@ -32,20 +58,8 @@
                             <li>Bootstrap and a little custom CSS for the front end</li>
                             <li>Logging - Log4J2</li>
                             <li>Hosting - AWS</li>
-                            <li>CI tools in AWS</li>
-                            <li>Materialize</li>
-                            <li>Unit Testing</li>
                             <li>JUnit tests to achieve 80%+ code coverage</li>
                             <li>IDE: IntelliJ IDEA</li>
-                        </ul>
-
-                        <ul class="list-unstyled">### Design
-
-                            <li>[User Stories](DesignDocuments/userStories.md)</li>
-                            <li>[Tasks](DesignDocuments/tasks.md)</li>
-                            <li>[Screen Design](DesignDocuments/Screens.md)</li>
-                            <li>[Application Flow](DesignDocuments/applicationFlow.md)</li>
-                            <li>[Database Design](DesignDocuments/databaseDiagram.png)</li>
                         </ul>
                     </div>
                 </article>
