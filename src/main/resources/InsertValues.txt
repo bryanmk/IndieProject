@@ -1,1 +1,1 @@
-('16', 'Give Gerard a Drink', '1', 'Elwynn Forest', '0'), ('5805', 'Welcome!', '1', 'Elwynn Forest', '0')
+('1271', 'Feast at the Blue Recluse', '15', 'Dustwallow Marsh', '0', '0', '0', '0')
