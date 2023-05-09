@@ -870,7 +870,25 @@ INSERT INTO quest_api VALUES ('26920', 'The Battle for Andorhal', '15', 'Western
                             ('26978', 'Who Needs Cauldrons?', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
                             ('26979', 'Strange New Faces', '15', 'Western Plaguelands', '2050', '5', '25', '0'),
                             ('26999', 'A New Era for the Plaguelands', '15', 'Western Plaguelands', '5150', '10', '50', '0'),
-
+                            ('27000', 'Learning the Ropes', '15', 'Western Plaguelands', '5150', '10', '50', '0'),
+                            ('27001', 'This Means WAR (Wild Arachnid Roundup)', '15', 'Western Plaguelands', '6200', '10', '50', '0'),
+                            ('27002', 'An Audience with the Highlord', '15', 'Western Plaguelands', '3100', '7', '87', '50'),
+                            ('27011', 'Redpine Thievery', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27012', 'A Gnolls Resolve', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27013', 'Too Close for Comfort', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27017', 'Memories from a Lost Past', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27018', 'The Herald <NYI>', '15', 'Western Plaguelands', '0', '0', '0', '0'),
+                            ('27053', 'Gahrrons Withering Cauldron', '15', 'Western Plaguelands', '2050', '5', '25', '0'),
+                            ('27054', 'Desperate Acts', '15', 'Western Plaguelands', '4100', '0', '2', '70'),
+                            ('27055', 'Students of Krastinov', '15', 'Western Plaguelands', '6200', '31', '50', '0'),
+                            ('27057', 'Return to the Stead', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27083', 'The Battle Resumes!', '15', 'Western Plaguelands', '525', '1', '5', '0'),
+                            ('27084', 'The Farmers Militia', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27085', 'Supporting the Troops', '15', 'Western Plaguelands', '5150', '21', '0', '0'),
+                            ('27086', 'Ashes to Ashes', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
+                            ('27087', 'Lindsay Ravensun, Revealed', '15', 'Western Plaguelands', '525', '1', '5', '0'),
+                            ('27089', 'Ace in the Hole', '15', 'Western Plaguelands', '6200', '0', '4', '20'),
+                            ('27090', 'Andorhal, Once and For All', '15', 'Western Plaguelands', '4100', '31', '50', '0'),
                             ('27117', 'Brute Strength', '15', 'Western Plaguelands', '6200', '31', '50', '0'),
                             ('27144', 'The Reckoning', '15', 'Western Plaguelands', '4100', '10', '50', '0'),
                             ('27150', 'The Menders Stead', '15', 'Western Plaguelands', '525', '1', '5', '0'),
@@ -914,3 +932,5 @@ INSERT INTO quest_api VALUES ('26920', 'The Battle for Andorhal', '15', 'Western
                             ('28576', 'Heros Call: Western Plaguelands!', '15', 'Western Plaguelands', '525', '1', '5', '0'),
                             ('28749', 'The Battle for Andorhal', '15', 'Western Plaguelands', '1050', '2', '62', '50'),
                             ('28750', 'The Battle for Andorhal', '15', 'Western Plaguelands', '1050', '2', '62', '50');
+
+NORTHERN STRANGLETHORN (33)
