@@ -1,1 +1,1 @@
-('27018', 'The Herald <NYI>', '15', 'Western Plaguelands', '0')
+('9436', 'Bloodscalp Insight', '10', 'Northern Stranglethorn', '4100', '10', '50', '0'), ('9457', 'An Unusual Patron', '10', 'Northern Stranglethorn', '5150', '21', '0', '0')
