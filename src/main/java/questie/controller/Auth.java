@@ -88,9 +88,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 req.setAttribute("userName", userName);
 
                 // GONNA TRY TO STORE THE USERNAME IN THE SESSION HERE
-//                HttpSession session = request.getSession();
-//
-//                session.setAttribute("userName");
+                HttpSession session = req.getSession();
+
+                session.setAttribute("userName", req.getParameter("userName"));
+
 
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
