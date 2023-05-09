@@ -1,1 +1,2 @@
-('1168', 'Army of the Black Dragon', '15', 'Dustwallow Marsh', '4100', '0', '2', '70')
+('9267', 'Mending Old Wounds', '1', 'Northern Barrens', '0', '0', '0', '0'), ('29086', 'Competition Schmompetition', '5', 'Northern Barrens', '0', '0', '0', '0'), ('29091', 'Freedom Movement', '5', 'Northern Barrens', '0', '0', '0', '0'), ('29094', 'The Short Way Home', '5', 'Northern Barrens', '0', '0', '0', '0'), ('29110', 'Mor'shan Caravan Rescue', '5', 'Northern Barrens', '0', '0', '0', '0'), ('43282', 'Invasion: Northern Barrens', '5', 'Northern Barrens', '12300', '0', '0', '0'), ('43289', 'Defend', '5', 'Northern Barrens', '6150', '0', '0', '0'),
+('43290', 'Repel', '5', 'Northern Barrens', '9200', '0', '0', '0')
