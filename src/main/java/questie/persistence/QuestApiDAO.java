@@ -67,12 +67,12 @@ public class QuestApiDAO implements PropertiesLoader {
         return quest;
     }
 
-    public Quest getAnswer(Integer number){
+    public Quest getAnswer(Integer number) throws IOException {
 
-//        JSONObject token = tokenGenerator.getToken();
+        JSONObject token = tokenGenerator.getToken();
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token=EUozqdnv06l32nuRreTP125XJK6kqCRMes");
+                client.target("https://us.api.blizzard.com/data/wow/quest/" + number + "?namespace=static-us&locale=en_US&access_token=" + token.getString("access_token"));
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         Quest quest = null;
